@@ -2,5 +2,12 @@
 }
 
 .item {
-    border-left: 24px solid transparent;
+    padding-left: 0.5rem;
+    border-left: 65px solid transparent;
+}
+
+@media (max-width: 800px) {
+    .item {
+        border-left: 115px solid transparent;
+    }
 }

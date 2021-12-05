@@ -30,8 +30,8 @@ const ColorConverter = () => {
 
     return (
         <>
-            <Typography variant='h3' component='h1' sx={{ margin: '2rem 0', textAlign: 'center' }}>
-                <span style={{ padding: '0.5rem 1rem', backgroundColor: color, color: colord(color).isDark() ? '#fff' : '#222', borderRadius: '10px' }}>Color Converter</span>
+            <Typography variant='h3' component='h1' sx={{ width: 'max-content', margin: '2rem auto', padding: '0.5rem 1rem', backgroundColor: color, color: colord(color).isDark() ? '#fff' : '#222', borderRadius: '10px' }}>
+                Color Converter
             </Typography>
             <ColorPicker color={color} onChange={setColor} />
 

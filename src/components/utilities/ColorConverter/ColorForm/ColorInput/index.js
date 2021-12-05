@@ -7,13 +7,9 @@ import InputAdornment from '@mui/material/InputAdornment'
 import IconButton from '@mui/material/IconButton'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
-const ColorInput = ({ color, colorName, colorType }) => {
+const ColorInput = ({ colorName, colorType }) => {
     const [active, setActive] = useState(false)
-
-    // TODO:
-    // get copy to clipboard to work
-    // useReducer to handle updated values
-    // https://reactjs.org/docs/hooks-reference.html#usereducer
+    const [value, setValue] = useState(colorType)
 
     const isActive = () => {
         setActive(true)
@@ -23,13 +19,12 @@ const ColorInput = ({ color, colorName, colorType }) => {
         setActive(false)
     }
 
-    const handleClipboard = (e) => {
-        // console.log(e.currentTarget.parent)
+    const handleClipboard = () => {
         return navigator.clipboard.writeText(colorType)
-        // return navigator.clipboard.writeText(e.target.parent.previousSibling.value)
-        // if ('clipboard' in navigator) {
-        //     return await navigator.clipboard.writeText(e.target.value)
-        // }
+    }
+
+    const handleUpdate = (e) => {
+        setValue(e.target.value)
     }
 
     return (
@@ -38,18 +33,16 @@ const ColorInput = ({ color, colorName, colorType }) => {
 
             <OutlinedInput
                 id={`${colorName}-input`}
-                // value={active ? color : colorType}
-                value={active ? null : colorType}
+                onChange={handleUpdate}
+                value={active ? value : colorType}
                 name={colorName}
                 label={colorName}
-                onFocus={isActive}
-                // onMouseOver={isActive}
+                onKeyDown={isActive}
                 onBlur={notActive}
-                // onMouseLeave={notActive}
                 endAdornment={
                     <InputAdornment position='end'>
                         <IconButton aria-label='copy value to clipboard' onClick={handleClipboard} edge='end'>
-                            {active ? <ContentCopyIcon /> : ''}
+                            <ContentCopyIcon />
                         </IconButton>
                     </InputAdornment>
                 }
