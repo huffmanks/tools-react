@@ -5,7 +5,9 @@ import './index.css'
 const ColorVariants = ({ color, hexColor, rgbColor, hslColor }) => {
     return (
         <div className='color-variants'>
-            <ColorItem color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} />
+            <div className='color-items'>
+                <ColorItem color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} />
+            </div>
         </div>
     )
 }

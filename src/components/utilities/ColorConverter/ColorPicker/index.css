@@ -1,5 +1,7 @@
 /* Custom layout */
 .custom-layout .react-colorful {
+    width: min(1000px, 100%);
+    margin: 0 auto 2rem;
     padding: 16px;
     border-radius: 12px;
     background: #33333a;

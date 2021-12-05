@@ -70,27 +70,6 @@ const ColorItem = ({ color, hexColor, rgbColor, hslColor }) => {
                     Darker: {colord(color).darken(0.1).toHslString()}
                 </div>
             </div>
-            <div className='output'>
-                <div className='item' style={{ borderColor: colord(color).lighten(0.1).toName({ closest: true }) }}>
-                    Lighter: {colord(color).lighten(0.1).toName({ closest: true })}
-                </div>
-
-                <div className='item' style={{ borderColor: colord(color).lighten(0.05).toName({ closest: true }) }}>
-                    Light: {colord(color).lighten(0.05).toName({ closest: true })}
-                </div>
-
-                <div className='item' style={{ borderColor: colord(color).toName({ closest: true }) }}>
-                    Name: {colord(color).toName({ closest: true })}
-                </div>
-
-                <div className='item' style={{ borderColor: colord(color).darken(0.05).toName({ closest: true }) }}>
-                    Dark: {colord(color).darken(0.05).toName({ closest: true })}
-                </div>
-
-                <div className='item' style={{ borderColor: colord(color).darken(0.1).toName({ closest: true }) }}>
-                    Darker: {colord(color).darken(0.1).toName({ closest: true })}
-                </div>
-            </div>
         </>
     )
 }
