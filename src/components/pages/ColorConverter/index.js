@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import Typography from '@mui/material/Typography'
+
 import ColorPicker from '../../utilities/ColorConverter/ColorPicker'
 import ColorForm from '../../utilities/ColorConverter/ColorForm'
 import ColorVariants from '../../utilities/ColorConverter/ColorVariants'
@@ -28,6 +30,9 @@ const ColorConverter = () => {
 
     return (
         <>
+            <Typography variant='h3' component='h1' sx={{ margin: '2rem 0', textAlign: 'center' }}>
+                <span style={{ padding: '0.5rem 1rem', backgroundColor: color, color: colord(color).isDark() ? '#fff' : '#222', borderRadius: '10px' }}>Color Converter</span>
+            </Typography>
             <ColorPicker color={color} onChange={setColor} />
 
             <ColorForm color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} nameColor={nameColor} handleColor={handleColor} />

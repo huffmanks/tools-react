@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout'
 
 // Pages
+import CaseConverter from './components/pages/CaseConverter'
 import ColorConverter from './components/pages/ColorConverter'
 
 const App = () => {
@@ -11,11 +12,12 @@ const App = () => {
         <Router>
             <Layout>
                 <Routes>
+                    <Route path='/case-converter' element={<CaseConverter />} />
+                    <Route path='/' element={<ColorConverter />} />
                     {/* <Route
                         path='/color-converter'
                         element={<ColorConverter />}
                     /> */}
-                    <Route path='/' element={<ColorConverter />} />
                 </Routes>
             </Layout>
         </Router>

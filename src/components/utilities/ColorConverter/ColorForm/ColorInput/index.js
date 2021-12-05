@@ -24,7 +24,9 @@ const ColorInput = ({ color, colorName, colorType }) => {
     }
 
     const handleClipboard = (e) => {
-        return navigator.clipboard.writeText(e.target.value)
+        // console.log(e.currentTarget.parent)
+        return navigator.clipboard.writeText(colorType)
+        // return navigator.clipboard.writeText(e.target.parent.previousSibling.value)
         // if ('clipboard' in navigator) {
         //     return await navigator.clipboard.writeText(e.target.value)
         // }
