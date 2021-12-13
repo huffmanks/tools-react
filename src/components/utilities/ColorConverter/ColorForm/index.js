@@ -4,7 +4,7 @@ import ColorInput from './ColorInput'
 
 const ColorForm = ({ hexColor, rgbColor, hslColor, nameColor, handleColor }) => {
     return (
-        <div style={{ width: 'min(1000px, 100%', margin: '0 auto 2rem' }}>
+        <div style={{ marginBottom: '2rem' }}>
             <Box
                 component='form'
                 sx={{

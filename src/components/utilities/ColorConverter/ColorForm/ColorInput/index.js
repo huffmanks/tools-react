@@ -11,12 +11,14 @@ const ColorInput = ({ colorName, colorType }) => {
     const [active, setActive] = useState(false)
     const [value, setValue] = useState(colorType)
 
-    const isActive = () => {
+    const isActive = (e) => {
         setActive(true)
+        setValue(e.target.value)
     }
 
     const notActive = () => {
         setActive(false)
+        setValue(colorType)
     }
 
     const handleClipboard = () => {
@@ -37,7 +39,7 @@ const ColorInput = ({ colorName, colorType }) => {
                 value={active ? value : colorType}
                 name={colorName}
                 label={colorName}
-                onKeyDown={isActive}
+                onFocus={isActive}
                 onBlur={notActive}
                 endAdornment={
                     <InputAdornment position='end'>

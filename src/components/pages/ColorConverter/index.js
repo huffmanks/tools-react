@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import PageTitle from '../../layout/PageTitle'
+
 import Typography from '@mui/material/Typography'
 
 import ColorPicker from '../../utilities/ColorConverter/ColorPicker'
@@ -30,14 +32,20 @@ const ColorConverter = () => {
 
     return (
         <>
-            <Typography variant='h3' component='h1' sx={{ width: 'max-content', margin: '2rem auto', padding: '0.5rem 1rem', backgroundColor: color, color: colord(color).isDark() ? '#fff' : '#222', borderRadius: '10px' }}>
-                Color Converter
-            </Typography>
+            <PageTitle>Color Converter</PageTitle>
+
             <ColorPicker color={color} onChange={setColor} />
 
             <ColorForm color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} nameColor={nameColor} handleColor={handleColor} />
 
-            <ColorVariants color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} />
+            <Typography
+                variant='h4'
+                component='h2'
+                sx={{ width: 'max-content', marginBottom: '2rem', padding: '0.5rem 1rem', background: `linear-gradient(to right, ${colord(color).lighten(0.15).toHex()}, ${colord(color).darken(0.15).toHex()})`, color: colord(color).isDark() ? '#fff' : '#222', borderRadius: '10px' }}>
+                Shades
+            </Typography>
+
+            <ColorVariants color={color} />
         </>
     )
 }

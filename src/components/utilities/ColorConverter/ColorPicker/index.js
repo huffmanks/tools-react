@@ -12,9 +12,6 @@ const ColorPicker = ({ color, ...rest }) => {
     const rgbaString = useMemo(() => {
         return colord(color).toRgbString()
     }, [color])
-    // const rgbaString = useMemo(() => {
-    //     return color.startsWith('rgba') ? color : colord(color).toRgbString()
-    // }, [color])
 
     return (
         <div className='custom-layout'>

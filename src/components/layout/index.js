@@ -12,7 +12,7 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 
-import { ToolRoutes, SiteRoutes } from '../routes'
+import { routesArray } from '../Routes/routesArray'
 
 const drawerWidth = 58
 
@@ -37,20 +37,20 @@ const Layout = ({ children }) => {
                 <Toolbar />
                 <Box sx={{ overflow: 'hidden' }}>
                     <List>
-                        {ToolRoutes.map((route) => (
-                            <Link key={route.key} to={route.path}>
+                        {routesArray.slice(0, -2).map(({ key, path, icon }) => (
+                            <Link key={key} to={path}>
                                 <ListItem button>
-                                    <ListItemIcon>{route.icon}</ListItemIcon>
+                                    <ListItemIcon>{icon}</ListItemIcon>
                                 </ListItem>
                             </Link>
                         ))}
                     </List>
                     <Divider />
                     <List>
-                        {SiteRoutes.map((route) => (
-                            <Link key={route.key} to={route.path}>
+                        {routesArray.slice(-2).map(({ key, path, icon }) => (
+                            <Link key={key} to={path}>
                                 <ListItem button>
-                                    <ListItemIcon>{route.icon}</ListItemIcon>
+                                    <ListItemIcon>{icon}</ListItemIcon>
                                 </ListItem>
                             </Link>
                         ))}
@@ -59,7 +59,11 @@ const Layout = ({ children }) => {
             </Drawer>
             <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                <Container maxWidth='xl'>{children}</Container>
+                <Container maxWidth='lg'>
+                    <div style={{ width: 'min(1000px, 100%)' }}>
+                        <>{children}</>
+                    </div>
+                </Container>
             </Box>
         </Box>
     )
