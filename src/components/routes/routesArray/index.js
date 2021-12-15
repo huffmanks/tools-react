@@ -20,6 +20,7 @@ export const routesArray = [
         name: 'Home',
         key: 'home',
         icon: <HomeIcon />,
+        description: 'Web dev tools.',
     },
     // {
     //     path: '/aspect-ratio-calculator',
@@ -27,6 +28,7 @@ export const routesArray = [
     //     name: 'Aspect Ratio Calculator',
     //     key: 'aspect-ratio-calculator',
     //     icon: <AspectRatioIcon />,
+    //     description: 'Calculate the aspect ratio from an original image.',
     // },
     {
         path: '/case-converter',
@@ -34,6 +36,7 @@ export const routesArray = [
         name: 'Case Converter',
         key: 'case-converter',
         icon: <TextFormatIcon />,
+        description: 'Convert text to any case.',
     },
     {
         path: '/color-converter',
@@ -41,6 +44,7 @@ export const routesArray = [
         name: 'Color Converter',
         key: 'color-converter',
         icon: <ColorLensIcon />,
+        description: 'Convert different color types.',
     },
     {
         path: '/profile',
@@ -48,6 +52,7 @@ export const routesArray = [
         name: 'Profile',
         key: 'profile',
         icon: <PersonIcon />,
+        description: 'Update your account profile.',
     },
     {
         path: '/settings',
@@ -55,5 +60,6 @@ export const routesArray = [
         name: 'Settings',
         key: 'settings',
         icon: <SettingsIcon />,
+        description: 'Update your tool settings.',
     },
 ]

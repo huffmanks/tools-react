@@ -1,0 +1,22 @@
+.card-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card {
+    flex: 0 0 325px;
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon svg {
+    color: #8a6e4b;
+    font-size: 75px !important;
+}

@@ -1,10 +1,9 @@
-import PageTitle from '../../layout/PageTitle'
+import HomeCards from '../../utilities/HomeCards'
 
 const Home = () => {
     return (
         <>
-            <PageTitle>Home</PageTitle>
-            <div>Home page</div>
+            <HomeCards />
         </>
     )
 }
