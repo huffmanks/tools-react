@@ -20,3 +20,8 @@
     color: #8a6e4b;
     font-size: 75px !important;
 }
+
+.card-view-link {
+    width: 100%;
+    text-decoration: none;
+}
