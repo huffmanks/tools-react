@@ -1,5 +1,6 @@
 // Pages
 import Home from '../../pages/Home'
+import AspectRatio from '../../pages/AspectRatio'
 import CaseConverter from '../../pages/CaseConverter'
 import ColorConverter from '../../pages/ColorConverter'
 import Profile from '../../pages/Profile'
@@ -7,7 +8,7 @@ import Settings from '../../pages/Settings'
 
 // Icons
 import HomeIcon from '@mui/icons-material/Home'
-// import AspectRatioIcon from '@mui/icons-material/AspectRatio'
+import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import TextFormatIcon from '@mui/icons-material/TextFormat'
 import ColorLensIcon from '@mui/icons-material/ColorLens'
 import PersonIcon from '@mui/icons-material/Person'
@@ -22,14 +23,14 @@ export const routesArray = [
         icon: <HomeIcon />,
         description: 'Web dev tools.',
     },
-    // {
-    //     path: '/aspect-ratio-calculator',
-    //     element: <AspectRatioCalculator />,
-    //     name: 'Aspect Ratio Calculator',
-    //     key: 'aspect-ratio-calculator',
-    //     icon: <AspectRatioIcon />,
-    //     description: 'Calculate the aspect ratio from an original image.',
-    // },
+    {
+        path: '/aspect-ratio',
+        element: <AspectRatio />,
+        name: 'Aspect Ratio',
+        key: 'aspect-ratio',
+        icon: <AspectRatioIcon />,
+        description: 'Calculate the aspect ratio.',
+    },
     {
         path: '/case-converter',
         element: <CaseConverter />,

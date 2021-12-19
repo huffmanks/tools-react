@@ -1,0 +1,42 @@
+.output-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.output-label {
+    margin-bottom: 15px;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    max-width: 456px;
+    min-height: 200px;
+    max-height: 250px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #8a6e4b;
+}
+
+.output-item {
+    color: #fff;
+}
+
+.output-value {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .output-item > * {
+        display: inline;
+    }
+    .output-value {
+        margin-left: 10px;
+        text-align: left;
+    }
+}

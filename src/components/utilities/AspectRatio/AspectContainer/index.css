@@ -1,0 +1,13 @@
+.aspect-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.aspect-container > * {
+    width: min(calc(600px - 3rem), 100%);
+    padding: 3rem;
+    background-color: #eee;
+    border-radius: 10px;
+}

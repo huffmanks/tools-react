@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
             <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
                 <Container maxWidth='lg'>
-                    <div style={{ width: 'min(1000px, 100%)' }}>
+                    <div style={{ width: 'min(1200px, 100%)' }}>
                         <>{children}</>
                     </div>
                 </Container>
