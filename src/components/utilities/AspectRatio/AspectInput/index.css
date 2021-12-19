@@ -1,11 +1,11 @@
-.form {
+.aspect-form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
 }
 
-.input-group {
+.aspect-input-group {
     display: flex;
     justify-content: space-between;
     align-items: center;

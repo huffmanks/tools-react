@@ -6,7 +6,7 @@ const ColorItem = ({ colorValue }) => {
     }
 
     return (
-        <div className='item' style={{ borderColor: colorValue }} onClick={handleClipboard}>
+        <div className='color-item' style={{ borderColor: colorValue }} onClick={handleClipboard}>
             {colorValue}
         </div>
     )

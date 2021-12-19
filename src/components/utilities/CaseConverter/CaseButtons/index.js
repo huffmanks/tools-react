@@ -36,7 +36,7 @@ const CaseButtons = ({ output, handleUpdate, setOutput }) => {
     }
 
     return (
-        <ButtonGroup id='btn-group' className='btn-group' variant='contained' aria-label='outlined button group'>
+        <ButtonGroup id='case-btn-group' className='btn-group' variant='contained' aria-label='outlined button group'>
             <Button onClick={handleLowerCase}>Lower</Button>
             <Button onClick={handleUpperCase}>Upper</Button>
             <Button onClick={handleCapitalCase}>Capitalize</Button>

@@ -4,7 +4,7 @@ import './index.css'
 
 const ColorItems = ({ darkest, darker, original, lighter, lightest }) => {
     return (
-        <div className='output'>
+        <div className='color-output'>
             <ColorItem colorValue={lightest} />
             <ColorItem colorValue={lighter} />
             <ColorItem colorValue={original} />

@@ -13,7 +13,7 @@ import './index.css'
 const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOriginalHeight, handleNewSize }) => {
     return (
         <Box
-            className='form'
+            className='aspect-form'
             component='form'
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
@@ -23,7 +23,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
             <div>
                 <Chip label='Original' sx={{ backgroundColor: '#8a6e4b', color: '#fff' }} />
             </div>
-            <div className='input-group'>
+            <div className='aspect-input-group'>
                 <FormControl>
                     <InputLabel htmlFor='original-width'>Width</InputLabel>
 
@@ -39,7 +39,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
             <div>
                 <Chip label='New' sx={{ backgroundColor: '#8a6e4b', color: '#fff' }} />
             </div>
-            <div className='input-group'>
+            <div className='aspect-input-group'>
                 <FormControl component='fieldset'>
                     <RadioGroup aria-label='gender' defaultValue='width' name='radio-buttons-group' onChange={handleRadio}>
                         <FormControlLabel

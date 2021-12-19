@@ -1,4 +1,4 @@
-.item {
+.color-item {
     padding: 1rem 0.5rem;
     background-color: #eee;
     text-align: center;
@@ -7,16 +7,16 @@
     transition: 0.15s ease-in;
 }
 
-.item:nth-child(even) {
+.color-item:nth-child(even) {
     background-color: #e3e3e3;
 }
 
-.item:hover {
+.color-item:hover {
     background-color: #d6d7d8;
 }
 
 @media (max-width: 800px) {
-    .item {
+    .color-item {
         border-left: 115px solid transparent;
     }
 }

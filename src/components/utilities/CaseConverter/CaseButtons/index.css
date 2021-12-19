@@ -1,54 +1,54 @@
-#btn-group {
+#case-btn-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
 }
 
-#btn-group button {
+#case-btn-group button {
     background-color: #8a6e4b;
     border-color: transparent;
 }
 
-#btn-group button:hover,
-#btn-group button:focus {
+#case-btn-group button:hover,
+#case-btn-group button:focus {
     background-color: #222;
 }
 
 @media (max-width: 900px) {
-    #btn-group {
+    #case-btn-group {
         grid-template-columns: repeat(4, 1fr);
     }
-    #btn-group button:nth-child(1) {
+    #case-btn-group button:nth-child(1) {
         border-radius: 4px 0 0 0;
     }
-    #btn-group button:nth-child(4) {
+    #case-btn-group button:nth-child(4) {
         border-radius: 0 4px 0 0;
     }
-    #btn-group button:nth-child(5) {
+    #case-btn-group button:nth-child(5) {
         border-radius: 0 0 0 4px;
     }
-    #btn-group button:nth-child(8) {
+    #case-btn-group button:nth-child(8) {
         border-radius: 0 0 4px 0;
     }
 }
 
 @media (max-width: 770px) {
-    #btn-group {
+    #case-btn-group {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #btn-group button:nth-child(2) {
+    #case-btn-group button:nth-child(2) {
         border-radius: 0 4px 0 0;
     }
 
-    #btn-group button:nth-child(4) {
+    #case-btn-group button:nth-child(4) {
         border-radius: 0;
     }
 
-    #btn-group button:nth-child(5) {
+    #case-btn-group button:nth-child(5) {
         border-radius: 0;
     }
 
-    #btn-group button:nth-child(7) {
+    #case-btn-group button:nth-child(7) {
         border-radius: 0 0 0 4px;
     }
 }

@@ -1,14 +1,14 @@
-.output-box {
+.aspect-output {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.output-label {
+.aspect-output-label {
     margin-bottom: 15px;
 }
 
-.output {
+.aspect-output-bg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,20 +22,20 @@
     background-color: #8a6e4b;
 }
 
-.output-item {
+.aspect-output-item {
     color: #fff;
 }
 
-.output-value {
+.aspect-output-value {
     margin-bottom: 10px;
     text-align: center;
 }
 
 @media (max-width: 900px) {
-    .output-item > * {
+    .aspect-output-item > * {
         display: inline;
     }
-    .output-value {
+    .aspect-output-value {
         margin-left: 10px;
         text-align: left;
     }

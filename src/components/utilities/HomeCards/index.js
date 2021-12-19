@@ -13,10 +13,10 @@ import './index.css'
 
 const HomeCards = () => {
     return (
-        <div className='card-flex'>
+        <div className='home-card-flex'>
             {routesArray.slice(1).map(({ key, path, name, icon, description }) => (
-                <Card className='card' key={key} sx={{ maxWidth: 345, padding: 3 }}>
-                    <div className='card-icon'>
+                <Card className='home-card' key={key} sx={{ maxWidth: 345, padding: 3 }}>
+                    <div className='home-card-icon'>
                         <Link to={path}>
                             <IconButton aria-label={name}>{icon}</IconButton>
                         </Link>
@@ -28,7 +28,7 @@ const HomeCards = () => {
                         <Typography variant='body2'>{description}</Typography>
                     </CardContent>
                     <CardActions>
-                        <Link className='card-view-link' to={path}>
+                        <Link className='home-card-view-link' to={path}>
                             <Button
                                 variant='contained'
                                 sx={{

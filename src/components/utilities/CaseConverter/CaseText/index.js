@@ -9,9 +9,9 @@ import './index.css'
 
 const CaseText = ({ output, handleUpdate, handleCopy, handleDelete }) => {
     return (
-        <FormControl fullWidth className='form-control'>
+        <FormControl fullWidth className='case-form-control'>
             <OutlinedInput
-                id='textarea'
+                id='case-textarea'
                 inputComponent='textarea'
                 onChange={handleUpdate}
                 value={output}

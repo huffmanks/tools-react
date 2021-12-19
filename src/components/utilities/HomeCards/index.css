@@ -1,4 +1,4 @@
-.card-flex {
+.home-card-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,22 +6,22 @@
     gap: 30px;
 }
 
-.card {
+.home-card {
     flex: 0 0 325px;
 }
 
-.card-icon {
+.home-card-icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-icon svg {
+.home-card-icon svg {
     color: #8a6e4b;
     font-size: 75px !important;
 }
 
-.card-view-link {
+.home-card-view-link {
     width: 100%;
     text-decoration: none;
 }

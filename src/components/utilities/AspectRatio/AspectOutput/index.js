@@ -22,23 +22,23 @@ const AspectOutput = ({ selected, originalWidth, originalHeight, newSize }) => {
     }, [selected, originalWidth, originalHeight, newSize])
 
     return (
-        <div className='output-box'>
-            <div className='output-label'>
+        <div className='aspect-output'>
+            <div className='aspect-output-label'>
                 <Chip label='Output' sx={{ height: 48, backgroundColor: '#8a6e4b', color: '#fff', fontSize: '1.5rem' }} />
             </div>
             {originalWidth && originalHeight && newSize ? (
-                <div className='output' style={{ aspectRatio: selected ? (newSize / newOtherSize).toFixed(2) : (newOtherSize / newSize).toFixed(2) }}>
-                    <div className='output-item'>
+                <div className='aspect-output-bg' style={{ aspectRatio: selected ? (newSize / newOtherSize).toFixed(2) : (newOtherSize / newSize).toFixed(2) }}>
+                    <div className='aspect-output-item'>
                         <div>New Width:</div>
-                        <div className='output-value'>{selected ? newSize : newOtherSize}</div>
+                        <div className='aspect-output-value'>{selected ? newSize : newOtherSize}</div>
                     </div>
-                    <div className='output-item'>
+                    <div className='aspect-output-item'>
                         <div>New Height:</div>
-                        <div className='output-value'>{selected ? newOtherSize : newSize}</div>
+                        <div className='aspect-output-value'>{selected ? newOtherSize : newSize}</div>
                     </div>
-                    <div className='output-item'>
+                    <div className='aspect-output-item'>
                         <div>Aspect Ratio:</div>
-                        <div className='output-value'>{selected ? (newSize / newOtherSize).toFixed(2) : (newOtherSize / newSize).toFixed(2)}</div>
+                        <div className='aspect-output-value'>{selected ? (newSize / newOtherSize).toFixed(2) : (newOtherSize / newSize).toFixed(2)}</div>
                     </div>
                 </div>
             ) : (
