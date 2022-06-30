@@ -4,7 +4,7 @@ import AspectRatio from '../pages/AspectRatio'
 import CaseConverter from '../pages/CaseConverter'
 import ColorConverter from '../pages/ColorConverter'
 import EmailSignature from '../pages/EmailSignature'
-import ScrapeLinks from '../pages/ScrapeLinks'
+import UnitConverter from '../pages/UnitConverter'
 
 // Icons
 import HomeIcon from '@mui/icons-material/Home'
@@ -12,7 +12,7 @@ import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import TextFormatIcon from '@mui/icons-material/TextFormat'
 import ColorLensIcon from '@mui/icons-material/ColorLens'
 import DesignServicesIcon from '@mui/icons-material/DesignServices'
-import AddLinkIcon from '@mui/icons-material/AddLink'
+import ScaleIcon from '@mui/icons-material/Scale'
 
 export const routesList = [
     {
@@ -56,11 +56,11 @@ export const routesList = [
         description: 'Create an email signature.',
     },
     {
-        path: '/scrape-links',
-        element: <ScrapeLinks />,
-        name: 'Scrape Links',
-        key: 'scrape-links',
-        icon: <AddLinkIcon />,
-        description: 'Scrape links from a webpage.',
+        path: '/unit-converter',
+        element: <UnitConverter />,
+        name: 'Unit Converter',
+        key: 'unit-converter',
+        icon: <ScaleIcon />,
+        description: 'Convert different unit types.',
     },
 ]

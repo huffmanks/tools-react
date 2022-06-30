@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-export const useFormControls = () => {
-    const [values, setValues] = useState({})
+export const useFormControls = (initialValues) => {
+    const [values, setValues] = useState(initialValues)
     const [errors, setErrors] = useState({})
     const [formSubmitted, setFormSubmitted] = useState(false)
 
@@ -57,7 +57,7 @@ export const useFormControls = () => {
     }
 
     const formIsValid = (fieldValues = values) => {
-        const isValid = fieldValues.fullName && fieldValues.email && fieldValues.title && fieldValues.phone && fieldValues.department && Object.values(errors).every((x) => x === '')
+        const isValid = fieldValues?.fullName && fieldValues?.email && fieldValues?.title && fieldValues?.phone && fieldValues?.department && Object.values(errors).every((x) => x === '')
 
         return isValid
     }

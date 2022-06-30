@@ -6,7 +6,7 @@ import CaseText from './CaseText'
 import CaseButtons from './CaseButtons'
 
 const CaseConverter = () => {
-    const [output, setOutput] = useState(null)
+    const [output, setOutput] = useState('')
 
     const handleUpdate = (e) => {
         setOutput(e.target.value)

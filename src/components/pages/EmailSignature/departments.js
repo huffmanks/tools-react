@@ -1,4 +1,5 @@
 export const departments = [
+    { id: 0, value: '' },
     { id: 1, value: 'Academic Affairs' },
     { id: 2, value: 'Accounting, Business and Finance' },
     { id: 3, value: 'Admission' },

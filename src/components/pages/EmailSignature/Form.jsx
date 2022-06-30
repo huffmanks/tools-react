@@ -56,7 +56,6 @@ const inputValues = [
         required: false,
         gridSm: 4,
     },
-
     {
         name: 'website',
         label: 'Website',
@@ -104,13 +103,12 @@ const Form = () => {
                     ))}
                     <Grid item sm={6} xs={12}>
                         <TextField
-                            id='department'
                             className='text-field'
                             fullWidth
                             select
                             required
                             label='Department'
-                            value={values.department ?? ''}
+                            value={values?.department ?? departments[0].value}
                             name='department'
                             onBlur={handleChange}
                             onChange={handleChange}
