@@ -1,23 +1,73 @@
-import { useState } from 'react'
+import { useFormControls } from '../../../hooks/useFormControls'
 
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
+import Button from '@mui/material/Button'
+import Output from './Output'
 
 import { departments } from './departments'
 
 import './_index.css'
 
+const inputValues = [
+    {
+        name: 'fullName',
+        label: 'Full Name',
+        placeholder: 'Ben Wofford',
+        required: true,
+        gridSm: 6,
+    },
+    {
+        name: 'email',
+        label: 'Email',
+        placeholder: 'email@wofford.edu',
+        required: true,
+        gridSm: 6,
+    },
+    {
+        name: 'title',
+        label: 'Title',
+        placeholder: 'Professor of Biology',
+        required: true,
+        multiline: true,
+        rows: 2,
+        gridSm: 12,
+    },
+    {
+        name: 'phone',
+        label: 'Phone',
+        placeholder: '864-597-4000',
+        required: true,
+        gridSm: 4,
+    },
+    {
+        name: 'cellPhone',
+        label: 'Cell Phone',
+        placeholder: '123-456-7890',
+        required: false,
+        gridSm: 4,
+    },
+    {
+        name: 'fax',
+        label: 'Fax',
+        placeholder: '864-597-4000',
+        required: false,
+        gridSm: 4,
+    },
+
+    {
+        name: 'website',
+        label: 'Website',
+        placeholder: 'https://wofford.edu',
+        required: false,
+        gridSm: 6,
+    },
+]
+
 const Form = () => {
-    const [fullName, setFullName] = useState('')
-    const [email, setEmail] = useState('')
-    const [title, setTitle] = useState('')
-    const [phone, setPhone] = useState('')
-    const [cellPhone, setCellPhone] = useState('')
-    const [fax, setFax] = useState('')
-    const [department, setDepartment] = useState('')
-    const [website, setWebsite] = useState('')
+    const { values, errors, formSubmitted, formIsValid, handleChange, handleBlur, handleSubmit } = useFormControls()
 
     return (
         <>
@@ -26,76 +76,62 @@ const Form = () => {
                 sx={{
                     '& .MuiTextField-root': { m: 1 },
                 }}
-                noValidate
+                onSubmit={handleSubmit}
                 autoComplete='off'>
                 <Grid container spacing={2} style={{ marginBottom: '16px' }}>
-                    <Grid item sm={6} xs={12}>
-                        <TextField className='text-field' fullWidth label='Name' variant='outlined' placeholder='Ben Wofford' value={fullName} onInput={(e) => setFullName(e.target.value)} />
-                    </Grid>
-
+                    {inputValues.map((field) => (
+                        <Grid key={field.name} item sm={field.gridSm} xs={12}>
+                            <TextField
+                                className='text-field'
+                                fullWidth
+                                variant='outlined'
+                                required={field.required ?? false}
+                                label={field.label}
+                                placeholder={field.placeholder}
+                                name={field.name}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                error={!!errors[field.name]}
+                                multiline={field.multiline ?? false}
+                                rows={field.rows ?? 1}
+                                autoComplete='none'
+                                {...(errors[field.name] && {
+                                    error: true,
+                                    helperText: errors[field.name],
+                                })}
+                            />
+                        </Grid>
+                    ))}
                     <Grid item sm={6} xs={12}>
                         <TextField
+                            id='department'
                             className='text-field'
                             fullWidth
-                            label='Email'
-                            variant='outlined'
-                            type='email'
-                            placeholder='email@wofford.edu'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </Grid>
-                </Grid>
-
-                <div style={{ marginBottom: '16px' }}>
-                    <TextField
-                        className='text-field'
-                        multiline
-                        fullWidth
-                        label='Title'
-                        variant='outlined'
-                        rows={2}
-                        placeholder='Professor of Biology'
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </div>
-
-                <Grid container spacing={2} style={{ marginBottom: '16px' }}>
-                    <Grid item sm={4} xs={12}>
-                        <TextField className='text-field' fullWidth label='Phone' variant='outlined' placeholder='864-597-4000' value={phone} onChange={(e) => setPhone(e.target.value)} />
-                    </Grid>
-                    <Grid item sm={4} xs={12}>
-                        <TextField className='text-field' fullWidth label='Cell Phone' variant='outlined' placeholder='123-456-7890' value={cellPhone} onChange={(e) => setCellPhone(e.target.value)} />
-                    </Grid>
-                    <Grid item sm={4} xs={12}>
-                        <TextField className='text-field' fullWidth label='Fax' variant='outlined' placeholder='864-597-4000' value={fax} onChange={(e) => setFax(e.target.value)} />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={2} style={{ marginBottom: '16px' }}>
-                    <Grid item sm={6} xs={12}>
-                        <TextField className='text-field' fullWidth select label='Department' value={department} onChange={(e) => setDepartment(e.target.value)}>
+                            select
+                            required
+                            label='Department'
+                            value={values.department ?? ''}
+                            name='department'
+                            onBlur={handleChange}
+                            onChange={handleChange}
+                            {...(errors.department && {
+                                error: true,
+                                helperText: errors.department,
+                            })}>
                             {departments.map((option) => (
-                                <MenuItem key={option} value={option}>
-                                    {option}
+                                <MenuItem key={option.id} value={option.value}>
+                                    {option.value}
                                 </MenuItem>
                             ))}
                         </TextField>
                     </Grid>
-
-                    <Grid item sm={6} xs={12}>
-                        <TextField
-                            className='text-field'
-                            fullWidth
-                            label='Website'
-                            variant='outlined'
-                            type='url'
-                            placeholder='https://wofford.edu'
-                            value={website}
-                            onChange={(e) => setWebsite(e.target.value)}
-                        />
-                    </Grid>
                 </Grid>
+
+                <Button size='large' variant='contained' type='submit' style={{ backgroundColor: `${!formIsValid() ? '#676767' : '#8a6e4b'}`, color: '#fff' }} disabled={!formIsValid()}>
+                    Create
+                </Button>
+
+                {formSubmitted && <Output values={values} />}
             </Box>
         </>
     )

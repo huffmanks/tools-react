@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
 p {
     margin-bottom: 30px;
 }
@@ -21,4 +23,53 @@ p {
 .text-field .MuiOutlinedInput-root.Mui-focused fieldset {
     border-color: #8a6e4b;
     border-left-width: 2px;
+}
+
+.output {
+    position: relative;
+    max-width: 350px;
+    margin: 50px 0;
+    padding: 1.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    transition: background-color 0.4s ease;
+}
+
+.result > * {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.result a {
+    text-decoration: none;
+    color: #8a6e4b;
+}
+
+.name {
+    color: #8a6e4b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contact {
+    font-size: 14px;
+}
+
+.contact:last-of-type {
+    margin-bottom: 16px;
+}
+
+.address {
+    color: #8a6e4b;
+    font-size: 14px;
+}
+
+.copy {
+    top: 10px;
+    right: 10px;
+    transform: translate(-10px, 10px);
 }

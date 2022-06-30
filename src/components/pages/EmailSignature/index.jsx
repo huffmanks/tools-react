@@ -1,7 +1,6 @@
 import PageTitle from '../../layout/PageTitle'
 import IntroParagraph from './IntroParagraph'
 import Form from './Form'
-// import Output from './Output'
 
 const EmailSignature = () => {
     return (
@@ -9,7 +8,6 @@ const EmailSignature = () => {
             <PageTitle>Email Signature</PageTitle>
             <IntroParagraph />
             <Form />
-            {/* <Output /> */}
         </>
     )
 }
