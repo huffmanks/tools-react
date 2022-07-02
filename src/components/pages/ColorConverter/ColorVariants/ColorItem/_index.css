@@ -1,6 +1,6 @@
 .color-item {
     padding: 1rem 0.5rem;
-    background-color: #eee;
+    background-color: #333;
     text-align: center;
     border-left: 65px solid transparent;
     cursor: pointer;
@@ -8,11 +8,11 @@
 }
 
 .color-item:nth-child(even) {
-    background-color: #e3e3e3;
+    background-color: #444;
 }
 
 .color-item:hover {
-    background-color: #d6d7d8;
+    background-color: #404040;
 }
 
 @media (max-width: 800px) {

@@ -19,7 +19,7 @@
     max-height: 250px;
     margin: 0 auto;
     padding: 1rem;
-    background-color: #8a6e4b;
+    background-color: var(--primary-main);
 }
 
 .aspect-output-item {

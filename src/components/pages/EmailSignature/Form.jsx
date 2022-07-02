@@ -125,7 +125,7 @@ const Form = () => {
                     </Grid>
                 </Grid>
 
-                <Button size='large' variant='contained' type='submit' style={{ backgroundColor: `${!formIsValid() ? '#676767' : '#8a6e4b'}`, color: '#fff' }} disabled={!formIsValid()}>
+                <Button size='large' variant='contained' type='submit' style={{ backgroundColor: `${!formIsValid() ? '#676767' : 'var(--primary-main)'}`, color: '#fff' }} disabled={!formIsValid()}>
                     Create
                 </Button>
 

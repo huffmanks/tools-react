@@ -4,7 +4,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --primary-main: #8a6e4b;
+    --primary-alt: #8b5cf6;
+    --dark-main: #1e1e1e;
+    --dark-alt: #333333;
+    --dark-alt-2: #404040;
+    --light-main: #fefefe;
 }
 
 p {
@@ -15,24 +24,7 @@ p {
     margin: 0 8px;
 }
 
-.text-field label.Mui-focused {
-    color: #000;
-}
-
-.text-field .MuiOutlinedInput-root fieldset {
-    background-color: rgba(0, 0, 0, 0.06);
-    border-color: transparent;
-    border-left-color: #8a6e4b;
-    border-left-width: 5px;
-}
-
-.text-field.secondary .MuiOutlinedInput-root fieldset {
-    border-color: #8a6e4b;
-    border-left-width: 1px;
-}
-
 .text-field.group.top .MuiOutlinedInput-root fieldset {
-    background-color: transparent;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-color: transparent;
@@ -41,33 +33,4 @@ p {
 .text-field.group.bottom .MuiOutlinedInput-root fieldset {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-}
-
-.text-field .MuiOutlinedInput-root:hover fieldset {
-    border-color: transparent;
-    border-left-color: #8a6e4b;
-}
-
-.text-field.secondary .MuiOutlinedInput-root:hover fieldset {
-    border-color: #8a6e4b;
-}
-
-.text-field .MuiOutlinedInput-root.Mui-focused fieldset {
-    border-color: #8a6e4b;
-    border-left-width: 5px;
-}
-
-.text-field.secondary .MuiOutlinedInput-root.Mui-focused fieldset {
-    border-left-width: 2px;
-}
-
-.text-field.secondary.group .MuiOutlinedInput-root.Mui-focused fieldset {
-    border-width: 1px;
-}
-
-@media (max-width: 900px) {
-    h1 {
-        font-size: 2.5rem !important;
-        text-align: center !important;
-    }
 }

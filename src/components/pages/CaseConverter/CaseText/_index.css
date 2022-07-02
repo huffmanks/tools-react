@@ -4,7 +4,7 @@
     grid-template-rows: repeat(2, 1fr);
     margin-bottom: 1rem;
     padding: 0.5rem;
-    background-color: #eee;
+    background-color: #333;
 }
 
 #case-textarea {

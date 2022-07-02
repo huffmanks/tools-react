@@ -46,7 +46,7 @@ const Output = (values) => {
                         </div>
                     </div>
                     <IconButton className='copy' style={{ position: 'absolute' }} onClick={handleClick}>
-                        <ContentCopyIcon />
+                        <ContentCopyIcon color='primary' />
                     </IconButton>
                 </div>
             ))}

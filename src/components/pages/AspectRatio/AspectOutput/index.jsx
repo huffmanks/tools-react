@@ -24,7 +24,7 @@ const AspectOutput = ({ selected, originalWidth, originalHeight, newSize }) => {
     return (
         <div className='aspect-output'>
             <div className='aspect-output-label'>
-                <Chip label='Output' sx={{ height: 48, backgroundColor: '#8a6e4b', color: '#fff', fontSize: '1.5rem' }} />
+                <Chip label='Output' sx={{ height: 48, backgroundColor: 'var(--primary-main)', color: '#fff', fontSize: '1.5rem' }} />
             </div>
             {originalWidth && originalHeight && newSize ? (
                 <div className='aspect-output-bg' style={{ aspectRatio: selected ? (newSize / newOtherSize).toFixed(2) : (newOtherSize / newSize).toFixed(2) }}>

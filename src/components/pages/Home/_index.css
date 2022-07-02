@@ -8,6 +8,7 @@
 
 .home-card {
     flex: 0 0 325px;
+    background-color: var(--dark-alt);
 }
 
 .home-card-icon {
@@ -17,7 +18,7 @@
 }
 
 .home-card-icon svg {
-    color: #8a6e4b;
+    color: var(--primary-main);
     font-size: 75px !important;
 }
 

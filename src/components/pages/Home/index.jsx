@@ -33,9 +33,9 @@ const Home = () => {
                                 <Button
                                     variant='contained'
                                     sx={{
-                                        backgroundColor: '#8a6e4b',
+                                        backgroundColor: 'var(--primary-main)',
                                         ':hover': {
-                                            backgroundColor: '#222',
+                                            backgroundColor: 'var(--dark-alt)',
                                         },
                                     }}
                                     fullWidth>

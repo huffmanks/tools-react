@@ -14,3 +14,8 @@
     -webkit-box-flex: 0;
     padding-left: 16px;
 }
+
+.stack-item {
+    background-color: var(--dark-alt);
+    color: #fff;
+}

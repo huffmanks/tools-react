@@ -5,8 +5,8 @@
     margin-bottom: 2rem;
     padding: 16px;
     border-radius: 12px;
-    background: #33333a;
-    box-shadow: 0 6px 12px #999;
+    background: var(--dark-alt);
+    box-shadow: 0 0 2px 2px #444;
 }
 
 .custom-layout .react-colorful__saturation {

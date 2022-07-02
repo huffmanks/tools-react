@@ -4,13 +4,13 @@
 }
 
 #case-btn-group button {
-    background-color: #8a6e4b;
+    padding: 10px 16px;
     border-color: transparent;
 }
 
 #case-btn-group button:hover,
 #case-btn-group button:focus {
-    background-color: #222;
+    background-color: #404040;
 }
 
 @media (max-width: 900px) {

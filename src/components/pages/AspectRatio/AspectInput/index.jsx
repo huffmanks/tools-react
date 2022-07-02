@@ -21,7 +21,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
             noValidate
             autoComplete='off'>
             <div>
-                <Chip label='Original' sx={{ backgroundColor: '#8a6e4b', color: '#fff' }} />
+                <Chip label='Original' sx={{ backgroundColor: 'var(--primary-main)', color: '#fff' }} />
             </div>
             <div className='aspect-input-group'>
                 <FormControl>
@@ -37,7 +37,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
             </div>
             <Divider sx={{ margin: '1rem 0' }} />
             <div>
-                <Chip label='New' sx={{ backgroundColor: '#8a6e4b', color: '#fff' }} />
+                <Chip label='New' sx={{ backgroundColor: 'var(--primary-main)', color: '#fff' }} />
             </div>
             <div className='aspect-input-group'>
                 <FormControl component='fieldset'>
@@ -48,7 +48,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
                                 <Radio
                                     sx={{
                                         '&.Mui-checked': {
-                                            color: '#8a6e4b',
+                                            color: 'var(--primary-main)',
                                         },
                                     }}
                                 />
@@ -61,7 +61,7 @@ const AspectInput = ({ selected, handleRadio, handleOriginalWidth, handleOrigina
                                 <Radio
                                     sx={{
                                         '&.Mui-checked': {
-                                            color: '#8a6e4b',
+                                            color: 'var(--primary-main)',
                                         },
                                     }}
                                 />

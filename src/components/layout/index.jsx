@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position='fixed' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#8a6e4b' }}>
+            <AppBar position='fixed' color='secondary' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
                 <Toolbar>
                     <Typography variant='h6' noWrap component='div'>
                         Web Tools
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
                 sx={{
                     width: drawerWidth,
                     flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: 'var(--dark-alt)' },
                 }}>
                 <Toolbar />
                 <Box sx={{ overflow: 'hidden' }}>
@@ -40,17 +40,17 @@ const Layout = ({ children }) => {
                         {routesList.slice(0, -2).map(({ key, path, icon }) => (
                             <Link key={key} to={path}>
                                 <ListItem button>
-                                    <ListItemIcon>{icon}</ListItemIcon>
+                                    <ListItemIcon sx={{ color: 'var(--light-main)' }}>{icon}</ListItemIcon>
                                 </ListItem>
                             </Link>
                         ))}
                     </List>
-                    <Divider />
+                    <Divider sx={{ backgroundColor: 'var(--light-main)' }} />
                     <List>
                         {routesList.slice(-2).map(({ key, path, icon }) => (
                             <Link key={key} to={path}>
                                 <ListItem button>
-                                    <ListItemIcon>{icon}</ListItemIcon>
+                                    <ListItemIcon sx={{ color: 'var(--light-main)' }}>{icon}</ListItemIcon>
                                 </ListItem>
                             </Link>
                         ))}
