@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { useFormControls } from '../../hooks/useFormControls'
+import { initialValues } from '../../constants/aspectRatio'
 
 import { Grid } from '@mui/material'
 import PageTitle from '../../layout/PageTitle'
@@ -7,28 +7,16 @@ import Form from './Form'
 import Output from './Output'
 
 const AspectRatio = () => {
-    const initialValues = {
-        originalWidth: '',
-        originalHeight: '',
-        newSize: '',
-    }
-
     const { values, handleChange } = useFormControls(initialValues)
-
-    const [selected, setSelected] = useState(true)
-
-    const handleRadio = () => {
-        setSelected((prev) => !prev)
-    }
 
     return (
         <>
             <PageTitle>Aspect Ratio</PageTitle>
 
             <Grid container spacing={5}>
-                <Form values={values} handleChange={handleChange} selected={selected} handleRadio={handleRadio} />
+                <Form values={values} handleChange={handleChange} />
 
-                <Output values={values} selected={selected} />
+                <Output values={values} />
             </Grid>
         </>
     )

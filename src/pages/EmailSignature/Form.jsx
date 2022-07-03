@@ -1,86 +1,35 @@
 import { useFormControls } from '../../hooks/useFormControls'
+import { initialValues, emailInputs, themeColorOptions } from '../../constants/emailSignature'
 
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
+import InputAdornment from '@mui/material/InputAdornment'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import Output from './Output'
 
-import { departments } from './departments'
-
 import './_index.css'
-
-const inputValues = [
-    {
-        name: 'fullName',
-        label: 'Full Name',
-        placeholder: 'Ben Wofford',
-        required: true,
-        gridSm: 6,
-    },
-    {
-        name: 'email',
-        label: 'Email',
-        placeholder: 'email@wofford.edu',
-        required: true,
-        gridSm: 6,
-    },
-    {
-        name: 'title',
-        label: 'Title',
-        placeholder: 'Professor of Biology',
-        required: true,
-        multiline: true,
-        rows: 2,
-        gridSm: 12,
-    },
-    {
-        name: 'phone',
-        label: 'Phone',
-        placeholder: '864-597-4000',
-        required: true,
-        gridSm: 4,
-    },
-    {
-        name: 'cellPhone',
-        label: 'Cell Phone',
-        placeholder: '123-456-7890',
-        required: false,
-        gridSm: 4,
-    },
-    {
-        name: 'fax',
-        label: 'Fax',
-        placeholder: '864-597-4000',
-        required: false,
-        gridSm: 4,
-    },
-    {
-        name: 'website',
-        label: 'Website',
-        placeholder: 'https://wofford.edu',
-        required: false,
-        gridSm: 6,
-    },
-]
+import { FormLabel } from '@mui/material'
 
 const Form = () => {
-    const { values, errors, formSubmitted, formIsValid, handleChange, handleBlur, handleSubmit } = useFormControls()
+    const { values, errors, formSubmitted, formIsValid, handleFocus, handleChange, handleBlur, handleSubmit } = useFormControls(initialValues)
 
     return (
         <>
             <Box component='form' onSubmit={handleSubmit} autoComplete='off'>
                 <Grid container spacing={2} style={{ marginBottom: '40px' }}>
-                    {inputValues.map((field) => (
+                    {emailInputs.map((field) => (
                         <Grid key={field.name} item sm={field.gridSm} xs={12}>
                             <TextField
+                                autoFocus={field.isAutoFocused}
                                 fullWidth
                                 variant='outlined'
                                 required={field.required ?? false}
                                 label={field.label}
                                 placeholder={field.placeholder}
                                 name={field.name}
+                                value={values[field.name]}
                                 onBlur={handleBlur}
                                 onChange={handleChange}
                                 error={!!errors[field.name]}
@@ -94,26 +43,38 @@ const Form = () => {
                             />
                         </Grid>
                     ))}
-                    <Grid item sm={6} xs={12}>
-                        <TextField
-                            fullWidth
-                            select
-                            required
-                            label='Department'
-                            value={values?.department ?? departments[0].value}
-                            name='department'
-                            onBlur={handleChange}
-                            onChange={handleChange}
-                            {...(errors.department && {
-                                error: true,
-                                helperText: errors.department,
-                            })}>
-                            {departments.map((option) => (
-                                <MenuItem key={option.id} value={option.value}>
-                                    {option.value}
+
+                    <Grid item xs={12}>
+                        <FormLabel>Theme Color</FormLabel>
+                    </Grid>
+
+                    <Grid item xl={0.75} md={1} sm={1.75} xs={3}>
+                        <div className='current-color' style={{ backgroundColor: values.colorSymbol + values.themeColor + (values.hasEndSymbol ? ')' : '') }}></div>
+                    </Grid>
+                    <Grid item xl={1.75} sm={2.5} xs={9}>
+                        <TextField fullWidth select label='Type' value={values?.colorType} name='colorType' onChange={handleChange}>
+                            {themeColorOptions.map((option) => (
+                                <MenuItem key={option.name} value={option.name}>
+                                    {option.label}
                                 </MenuItem>
                             ))}
                         </TextField>
+                    </Grid>
+                    <Grid item xl={2.25} md={3} sm={4.75} xs={12}>
+                        <TextField
+                            fullWidth
+                            variant='outlined'
+                            label='Color'
+                            placeholder={values.placeholder}
+                            name='themeColor'
+                            value={values.themeColor}
+                            onFocus={handleFocus}
+                            onChange={handleChange}
+                            InputProps={{
+                                startAdornment: <InputAdornment position='start'>{values.colorSymbol}</InputAdornment>,
+                                endAdornment: (values.colorType === 'rgb' || values.colorType === 'hsl') && <InputAdornment position='end'>)</InputAdornment>,
+                            }}
+                        />
                     </Grid>
                 </Grid>
 

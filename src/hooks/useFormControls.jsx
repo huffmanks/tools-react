@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { getColorOptionsInfo } from '../constants/emailSignature'
+
 export const useFormControls = (initialValues) => {
     const [values, setValues] = useState(initialValues)
     const [errors, setErrors] = useState({})
@@ -34,20 +36,32 @@ export const useFormControls = (initialValues) => {
             temp.website =
                 fieldValues.website.match(/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi) || fieldValues.website === '' ? '' : 'Website URL is not valid.'
 
-        if ('department' in fieldValues) temp.department = fieldValues.department ? '' : 'This field is required.'
-
         setErrors({
             ...temp,
         })
     }
 
+    const handleFocus = (e) => {
+        e.target.select()
+    }
+
     const handleChange = (e) => {
         const { name, value } = e.target
 
-        setValues({
-            ...values,
-            [name]: value,
-        })
+        if (name === 'colorType') {
+            setValues({
+                ...values,
+                [name]: value,
+                colorSymbol: getColorOptionsInfo(value, 'colorSymbol'),
+                themeColor: getColorOptionsInfo(value, 'defaultValue'),
+                placeholder: getColorOptionsInfo(value, 'defaultValue'),
+            })
+        } else {
+            setValues({
+                ...values,
+                [name]: value,
+            })
+        }
     }
 
     const handleBlur = (e) => {
@@ -57,7 +71,7 @@ export const useFormControls = (initialValues) => {
     }
 
     const formIsValid = (fieldValues = values) => {
-        const isValid = fieldValues?.fullName && fieldValues?.email && fieldValues?.title && fieldValues?.phone && fieldValues?.department && Object.values(errors).every((x) => x === '')
+        const isValid = fieldValues?.fullName && fieldValues?.email && fieldValues?.title && fieldValues?.phone && Object.values(errors).every((x) => x === '')
 
         return isValid
     }
@@ -77,6 +91,7 @@ export const useFormControls = (initialValues) => {
         errors,
         formSubmitted,
         formIsValid,
+        handleFocus,
         handleChange,
         handleBlur,
         handleSubmit,

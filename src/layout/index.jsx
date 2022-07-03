@@ -198,6 +198,7 @@ export const Layout = ({ children }) => {
                 sx={{
                     flexGrow: 1,
                     p: 4,
+                    ...(open && { paddingLeft: '212px' }),
                     '@media (max-width: 600px)': {
                         p: 3,
                     },

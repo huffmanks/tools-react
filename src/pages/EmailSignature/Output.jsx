@@ -1,55 +1,62 @@
 import { useRef } from 'react'
 
+import { useCopyToClipboard } from '../../hooks/useCopyToClipboard'
+import { getColorCode } from '../../constants/emailSignature'
+
 import IconButton from '@mui/material/IconButton'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 import './_index.css'
 
-const Output = (values) => {
+const Output = ({ values }) => {
     const resultRef = useRef(null)
 
-    const handleClick = () => {
-        let range = document.createRange()
-        range.selectNode(resultRef.current)
-        window.getSelection().removeAllRanges()
-        window.getSelection().addRange(range)
-        document.execCommand('copy')
-        window.getSelection().removeAllRanges()
+    const copy = useCopyToClipboard()
+
+    const handleClick = async (e) => {
+        e.preventDefault()
+
+        copy(resultRef, true)
     }
+
     return (
         <>
-            {Object.values(values).map((value, index) => (
-                <div key={index} className='output'>
-                    <div className='result' ref={resultRef}>
-                        <div className='name'>{value.fullName}</div>
-                        <div className='title'>{value.title}</div>
+            <div className='output'>
+                <div style={{ fontFamily: '"Montserrat", sans-serif' }} ref={resultRef}>
+                    <div style={{ color: getColorCode(values), fontWeight: 'bold', fontSize: '20px', fontFamily: '"Montserrat", sans-serif' }}>{values.fullName}</div>
+                    <div style={{ fontWeight: 'bold', fontSize: '16px', fontFamily: '"Montserrat", sans-serif' }}>{values.title}</div>
+                    <div style={{ marginBottom: '16px' }}>
                         <div>
-                            <div className='contact'>
-                                Email: <a href={`mailto:${value.email}`}>{value.email}</a>
+                            <span style={{ fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>Email: </span>
+                            <a href={`mailto:${values.email}`} style={{ color: getColorCode(values), fontSize: '14px', textDecoration: 'none', fontFamily: '"Montserrat", sans-serif' }}>
+                                {values.email}
+                            </a>
+                        </div>
+
+                        <div style={{ fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>Phone: {values.phone}</div>
+
+                        {values.cellPhone && <div style={{ fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>Cell: {values.cellPhone}</div>}
+                        {values.fax && <div style={{ fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>Fax: {values.fax}</div>}
+                        {values.website && (
+                            <div>
+                                <span style={{ fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>Web: </span>
+                                <a href={values.website} style={{ color: getColorCode(values), fontSize: '14px', textDecoration: 'none', fontFamily: '"Montserrat", sans-serif' }}>
+                                    {values.website}
+                                </a>
                             </div>
-
-                            <div className='contact'>Phone: {value.phone}</div>
-
-                            {value.cellPhone && <div className='contact'>Cell: {value.cellPhone}</div>}
-                            {value.fax && <div className='contact'>Fax: {value.fax}</div>}
-                            {value.website && (
-                                <div className='contact'>
-                                    Web: <a href={value.website}>{value.website}</a>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className='address'>
-                            Wofford College <br />
-                            {value.department} <br />
-                            121 College St. Spartanburg, S.C. 29303
-                        </div>
+                        )}
                     </div>
-                    <IconButton className='copy' style={{ position: 'absolute' }} onClick={handleClick}>
-                        <ContentCopyIcon color='primary' />
-                    </IconButton>
+
+                    <div style={{ color: getColorCode(values), fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>{values.companyName} </div>
+                    <div style={{ color: getColorCode(values), fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}> {values.department}</div>
+                    <div style={{ color: getColorCode(values), fontSize: '14px', fontFamily: '"Montserrat", sans-serif' }}>
+                        {values.address} {values.cityState} {values.zipCode}
+                    </div>
                 </div>
-            ))}
+                <IconButton className='copy' style={{ position: 'absolute' }} onClick={handleClick}>
+                    <ContentCopyIcon color='primary' />
+                </IconButton>
+            </div>
         </>
     )
 }

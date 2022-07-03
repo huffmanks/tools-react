@@ -1,9 +1,9 @@
 <div id="top"></div>
 <br />
 
-<div align="center">
-    <h1 align="center">Web Tools</h1>
-    <p align="center">
+<div>
+    <h1>Web Tools</h1>
+    <p>
         List of tools to help speed web development.
         <br />
         <br />
