@@ -4,7 +4,7 @@ import PageTitle from '../../layout/PageTitle'
 
 import Typography from '@mui/material/Typography'
 
-import ColorPicker from './ColorPicker'
+import Colord from './Colord'
 import ColorForm from './ColorForm'
 import ColorVariants from './ColorVariants'
 
@@ -12,7 +12,7 @@ import { colord, extend } from 'colord'
 import namesPlugin from 'colord/plugins/names'
 extend([namesPlugin])
 
-const ColorConverter = () => {
+const ColorPicker = () => {
     const [color, setColor] = useState('#8a6e4b')
     const [hexColor, setHexColor] = useState('#8a6e4b')
     const [rgbColor, setRgbColor] = useState('rgb(138, 110, 75)')
@@ -32,9 +32,9 @@ const ColorConverter = () => {
 
     return (
         <>
-            <PageTitle>Color Converter</PageTitle>
+            <PageTitle>Color Picker</PageTitle>
 
-            <ColorPicker color={color} onChange={setColor} />
+            <Colord color={color} onChange={setColor} />
 
             <ColorForm color={color} hexColor={hexColor} rgbColor={rgbColor} hslColor={hslColor} nameColor={nameColor} handleColor={handleColor} />
 
@@ -57,4 +57,4 @@ const ColorConverter = () => {
     )
 }
 
-export default ColorConverter
+export default ColorPicker

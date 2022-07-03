@@ -8,7 +8,7 @@ import './_index.css'
 
 extend([namesPlugin])
 
-const ColorPicker = ({ color, ...rest }) => {
+const Colord = ({ color, ...rest }) => {
     const rgbaString = useMemo(() => {
         return colord(color).toRgbString()
     }, [color])
@@ -20,4 +20,4 @@ const ColorPicker = ({ color, ...rest }) => {
     )
 }
 
-export default ColorPicker
+export default Colord

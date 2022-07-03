@@ -1,14 +1,9 @@
-.home-card-flex {
+.home-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 30px;
-}
-
-.home-card {
-    flex: 0 0 325px;
-    background-color: var(--dark-alt);
 }
 
 .home-card-icon {
@@ -18,11 +13,5 @@
 }
 
 .home-card-icon svg {
-    color: var(--primary-main);
-    font-size: 75px !important;
-}
-
-.home-card-view-link {
-    width: 100%;
-    text-decoration: none;
+    font-size: 75px;
 }

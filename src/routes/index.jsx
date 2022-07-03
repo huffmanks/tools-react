@@ -1,8 +1,8 @@
 // Pages
 import Home from '../pages/Home'
 import AspectRatio from '../pages/AspectRatio'
-import CaseConverter from '../pages/CaseConverter'
-import ColorConverter from '../pages/ColorConverter'
+import TextFormatter from '../pages/TextFormatter'
+import ColorPicker from '../pages/ColorPicker'
 import EmailSignature from '../pages/EmailSignature'
 import UnitConverter from '../pages/UnitConverter'
 
@@ -14,7 +14,7 @@ import ColorLensIcon from '@mui/icons-material/ColorLens'
 import DesignServicesIcon from '@mui/icons-material/DesignServices'
 import ScaleIcon from '@mui/icons-material/Scale'
 
-export const routesList = [
+export const routes = [
     {
         path: '/',
         element: <Home />,
@@ -32,28 +32,20 @@ export const routesList = [
         description: 'Calculate the aspect ratio.',
     },
     {
-        path: '/case-converter',
-        element: <CaseConverter />,
-        name: 'Case Converter',
-        key: 'case-converter',
-        icon: <TextFormatIcon />,
-        description: 'Convert text to any case.',
-    },
-    {
-        path: '/color-converter',
-        element: <ColorConverter />,
-        name: 'Color Converter',
-        key: 'color-converter',
+        path: '/color-picker',
+        element: <ColorPicker />,
+        name: 'Color Picker',
+        key: 'color-picker',
         icon: <ColorLensIcon />,
-        description: 'Convert different color types.',
+        description: 'Choose a color in HEX, RGB or HSL.',
     },
     {
-        path: '/email-signature',
-        element: <EmailSignature />,
-        name: 'Email Signature',
-        key: 'email-signature',
-        icon: <DesignServicesIcon />,
-        description: 'Create an email signature.',
+        path: '/text-formatter',
+        element: <TextFormatter />,
+        name: 'Text Formatter',
+        key: 'text-formatter',
+        icon: <TextFormatIcon />,
+        description: 'Format text to any case.',
     },
     {
         path: '/unit-converter',
@@ -62,5 +54,13 @@ export const routesList = [
         key: 'unit-converter',
         icon: <ScaleIcon />,
         description: 'Convert different unit types.',
+    },
+    {
+        path: '/email-signature',
+        element: <EmailSignature />,
+        name: 'Email Signature',
+        key: 'email-signature',
+        icon: <DesignServicesIcon />,
+        description: 'Create an email signature.',
     },
 ]

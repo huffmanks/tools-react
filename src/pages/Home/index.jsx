@@ -7,19 +7,21 @@ import IconButton from '@mui/material/IconButton'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
-import { routesList } from '../../Routes/routesList'
+import { routes } from '../../routes'
 
 import './_index.css'
 
 const Home = () => {
     return (
         <>
-            <div className='home-card-flex'>
-                {routesList.slice(1).map(({ key, path, name, icon, description }) => (
-                    <Card className='home-card' key={key} sx={{ maxWidth: 345, padding: 3 }}>
+            <div className='home-cards'>
+                {routes.slice(1).map(({ key, path, name, icon, description }) => (
+                    <Card color='secondary' key={key} sx={{ flex: '0 0 325px', maxWidth: 345, padding: 3 }}>
                         <div className='home-card-icon'>
                             <Link to={path}>
-                                <IconButton aria-label={name}>{icon}</IconButton>
+                                <IconButton aria-label={name} color='primary'>
+                                    {icon}
+                                </IconButton>
                             </Link>
                         </div>
                         <CardContent>
@@ -29,11 +31,10 @@ const Home = () => {
                             <Typography variant='body2'>{description}</Typography>
                         </CardContent>
                         <CardActions>
-                            <Link className='home-card-view-link' to={path}>
+                            <Link to={path} style={{ width: '100%', textDecoration: 'none' }}>
                                 <Button
                                     variant='contained'
                                     sx={{
-                                        backgroundColor: 'var(--primary-main)',
                                         ':hover': {
                                             backgroundColor: 'var(--dark-alt)',
                                         },

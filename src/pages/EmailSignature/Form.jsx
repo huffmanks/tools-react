@@ -1,4 +1,4 @@
-import { useFormControls } from '../../../hooks/useFormControls'
+import { useFormControls } from '../../hooks/useFormControls'
 
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -125,7 +125,12 @@ const Form = () => {
                     </Grid>
                 </Grid>
 
-                <Button size='large' variant='contained' type='submit' style={{ backgroundColor: `${!formIsValid() ? '#676767' : 'var(--primary-main)'}`, color: '#fff' }} disabled={!formIsValid()}>
+                <Button
+                    size='large'
+                    variant='contained'
+                    type='submit'
+                    style={{ width: '150px', marginLeft: '10px', backgroundColor: `${!formIsValid() ? '#676767' : 'var(--primary-main)'}`, color: '#fff' }}
+                    disabled={!formIsValid()}>
                     Create
                 </Button>
 

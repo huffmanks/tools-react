@@ -1,29 +1,15 @@
-.aspect-output {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.aspect-output-label {
-    margin-bottom: 15px;
-}
-
 .aspect-output-bg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 150px;
-    max-width: 456px;
+    max-width: calc(100% - 105px);
     min-height: 200px;
     max-height: 250px;
     margin: 0 auto;
     padding: 1rem;
     background-color: var(--primary-main);
-}
-
-.aspect-output-item {
-    color: #fff;
 }
 
 .aspect-output-value {
@@ -32,11 +18,11 @@
 }
 
 @media (max-width: 900px) {
-    .aspect-output-item > * {
-        display: inline;
+    .aspect-output-item {
+        display: flex;
+        gap: 10px;
     }
     .aspect-output-value {
-        margin-left: 10px;
         text-align: left;
     }
 }
