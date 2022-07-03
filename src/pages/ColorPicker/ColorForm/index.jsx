@@ -6,13 +6,14 @@ const ColorForm = ({ hexColor, rgbColor, hslColor, nameColor, handleColor }) => 
     return (
         <div style={{ marginBottom: '2rem' }}>
             <Box
-                component='form'
                 sx={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
                     gap: '1rem',
+                    '@media screen and (max-width: 525px)': {
+                        gridTemplateColumns: '1fr',
+                    },
                 }}
-                noValidate
                 autoComplete='off'
                 onChange={handleColor}>
                 <ColorInput colorName='HEX' colorType={hexColor} />

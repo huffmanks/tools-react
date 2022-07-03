@@ -15,8 +15,21 @@
     background-color: #404040;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 652px) {
     .color-item {
         border-left: 115px solid transparent;
+    }
+}
+
+@media (max-width: 450px) {
+    .color-item {
+        border-left: 65px solid transparent;
+    }
+}
+
+@media (max-width: 350px) {
+    .color-item {
+        border-left: 40px solid transparent;
+        font-size: 14px;
     }
 }

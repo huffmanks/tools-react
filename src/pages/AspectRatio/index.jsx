@@ -8,9 +8,9 @@ import Output from './Output'
 
 const AspectRatio = () => {
     const initialValues = {
-        originalWidth: 1920,
-        originalHeight: 1080,
-        newSize: 500,
+        originalWidth: '',
+        originalHeight: '',
+        newSize: '',
     }
 
     const { values, handleChange } = useFormControls(initialValues)

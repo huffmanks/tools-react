@@ -20,17 +20,13 @@ p {
     margin-bottom: 30px;
 }
 
-.text-field.group.MuiTextField-root {
-    margin: 0 8px;
-}
-
-.text-field.group.top .MuiOutlinedInput-root fieldset {
+.group.top .MuiOutlinedInput-root fieldset {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-color: transparent;
 }
 
-.text-field.group.bottom .MuiOutlinedInput-root fieldset {
+.group.bottom .MuiOutlinedInput-root fieldset {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }

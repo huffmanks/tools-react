@@ -17,30 +17,10 @@ const Form = ({ values, handleChange, selected, handleRadio }) => {
             </Grid>
 
             <Grid item xs={12} sm={6}>
-                <TextField
-                    className='text-field'
-                    fullWidth
-                    variant='outlined'
-                    label='Width'
-                    placeholder='1920'
-                    name='originalWidth'
-                    value={values.originalWidth}
-                    onChange={handleChange}
-                    autoComplete='none'
-                />
+                <TextField fullWidth variant='outlined' label='Width' placeholder='1920' name='originalWidth' value={values.originalWidth} onChange={handleChange} autoComplete='none' />
             </Grid>
             <Grid item xs={12} sm={6}>
-                <TextField
-                    className='text-field'
-                    fullWidth
-                    variant='outlined'
-                    label='Height'
-                    placeholder='1080'
-                    name='originalHeight'
-                    value={values.originalHeight}
-                    onChange={handleChange}
-                    autoComplete='none'
-                />
+                <TextField fullWidth variant='outlined' label='Height' placeholder='1080' name='originalHeight' value={values.originalHeight} onChange={handleChange} autoComplete='none' />
             </Grid>
 
             <Grid item xs={12}>
@@ -59,17 +39,7 @@ const Form = ({ values, handleChange, selected, handleRadio }) => {
                 </FormControl>
             </Grid>
             <Grid item xs={12} sm={6}>
-                <TextField
-                    className='text-field'
-                    fullWidth
-                    variant='outlined'
-                    label={selected ? 'Width' : 'Height'}
-                    placeholder='500'
-                    name='newSize'
-                    value={values.newSize}
-                    onChange={handleChange}
-                    autoComplete='none'
-                />
+                <TextField fullWidth variant='outlined' label={selected ? 'Width' : 'Height'} placeholder='500' name='newSize' value={values.newSize} onChange={handleChange} autoComplete='none' />
             </Grid>
         </Grid>
     )

@@ -70,18 +70,11 @@ const Form = () => {
 
     return (
         <>
-            <Box
-                component='form'
-                sx={{
-                    '& .MuiTextField-root': { m: 1 },
-                }}
-                onSubmit={handleSubmit}
-                autoComplete='off'>
-                <Grid container spacing={2} style={{ marginBottom: '16px' }}>
+            <Box component='form' onSubmit={handleSubmit} autoComplete='off'>
+                <Grid container spacing={2} style={{ marginBottom: '40px' }}>
                     {inputValues.map((field) => (
                         <Grid key={field.name} item sm={field.gridSm} xs={12}>
                             <TextField
-                                className='text-field'
                                 fullWidth
                                 variant='outlined'
                                 required={field.required ?? false}
@@ -103,7 +96,6 @@ const Form = () => {
                     ))}
                     <Grid item sm={6} xs={12}>
                         <TextField
-                            className='text-field'
                             fullWidth
                             select
                             required
@@ -125,12 +117,7 @@ const Form = () => {
                     </Grid>
                 </Grid>
 
-                <Button
-                    size='large'
-                    variant='contained'
-                    type='submit'
-                    style={{ width: '150px', marginLeft: '10px', backgroundColor: `${!formIsValid() ? '#676767' : 'var(--primary-main)'}`, color: '#fff' }}
-                    disabled={!formIsValid()}>
+                <Button className='form-btn' size='large' variant='contained' type='submit' style={{ backgroundColor: `${!formIsValid() ? '#555' : 'var(--primary-main)'}` }} disabled={!formIsValid()}>
                     Create
                 </Button>
 

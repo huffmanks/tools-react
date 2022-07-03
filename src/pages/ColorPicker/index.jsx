@@ -48,6 +48,9 @@ const ColorPicker = () => {
                     background: `linear-gradient(to right, ${colord(color).lighten(0.15).toHex()}, ${colord(color).darken(0.15).toHex()})`,
                     color: colord(color).isDark() ? '#fff' : '#222',
                     borderRadius: '10px',
+                    '@media screen and (max-width: 400px)': {
+                        fontSize: '1.5rem',
+                    },
                 }}>
                 Shades
             </Typography>

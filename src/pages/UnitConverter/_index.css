@@ -1,21 +1,16 @@
-.input-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: calc(100% + 16px);
-    margin-left: -16px;
-    box-sizing: border-box;
-}
-
-.input-group {
-    max-width: 25%;
-    flex-basis: 25%;
-    flex-grow: 0;
-    -webkit-box-flex: 0;
-    padding-left: 16px;
-}
-
 .stack-item {
+    width: fit-content;
+    padding: 10px 15px;
     background-color: var(--dark-alt);
-    color: #fff;
+    border-radius: 6px;
+}
+
+.stack-pipe {
+    margin: 0 10px;
+}
+
+@media (max-width: 899px) {
+    .stack-item {
+        width: 100%;
+    }
 }
