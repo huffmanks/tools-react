@@ -2,9 +2,8 @@
 
 <br />
 <div align="center">
-  <a href="https://tools.huffmanks.com">
-    <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="screenshot" width="80" height="80">
-  </a>
+
+[![Web Tools][https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png]](https://tools.huffmanks.com)
 
 <h3 align="center">Web Tools</h3>
 
