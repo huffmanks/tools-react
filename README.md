@@ -2,8 +2,8 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/huffmanks/tools-react">
-    <img src="./images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://tools.huffmanks.com">
+    <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="screenshot" width="80" height="80">
   </a>
 
 <h3 align="center">Web Tools</h3>
@@ -24,30 +24,15 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#roadmap">Roadmap</a></limail>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://tools.huffmanks.com/aspect-ratio)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### Built With
+## Built With
 
 -   [React.js](https://reactjs.org/)
 -   [MUI](https://mui.com/)
@@ -63,8 +48,6 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-
-### Installation
 
 1. Clone the repo
     ```sh
@@ -110,10 +93,8 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Your Name - huffmanks2@gmail.com
+Kevin Huffman - huff9121@gmail.com
 
-Project Link: [https://github.com/huffmanks/tools-react](https://github.com/huffmanks/tools-react)
+Project Link: [https://tools.huffmanks.com](https://tools.huffmanks.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-[product-screenshot]: ./images/screenshot.png
