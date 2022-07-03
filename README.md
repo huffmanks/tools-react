@@ -1,24 +1,25 @@
 <div id="top"></div>
+<br />
+
+<div align="center">
+    <h1 align="center">Web Tools</h1>
+    <p align="center">
+        List of tools to help speed web development.
+        <br />
+        <br />
+        <a href="https://tools.huffmanks.com">View Demo</a>
+        ·
+        <a href="https://github.com/huffmanks/tools-react/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/huffmanks/tools-react/issues">Request Feature</a>
+    </p>
+    <br />
+    <a href="https://tools.huffmanks.com">
+        <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="example screenshot">
+    </a>
+</div>
 
 <br />
-<div align="center">
-  <a href="https://tools.huffmanks.com">
-    <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="example screenshot">
-  </a>
-
-<h3 align="center">Web Tools</h3>
-
-  <p align="center">
-    List of tools to help speed web development.
-    <br />
-    <br />
-    <a href="https://tools.huffmanks.com">View Demo</a>
-    ·
-    <a href="https://github.com/huffmanks/tools-react/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/huffmanks/tools-react/issues">Request Feature</a>
-  </p>
-</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
