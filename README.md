@@ -1,11 +1,11 @@
 <div id="top"></div>
 
 <br />
-
-[![Web Tools][https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png]](https://tools.huffmanks.com)
-
-<br />
 <div align="center">
+  <a href="https://tools.huffmanks.com">
+    <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="example screenshot">
+  </a>
+
 <h3 align="center">Web Tools</h3>
 
   <p align="center">
