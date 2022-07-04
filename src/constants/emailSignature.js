@@ -24,7 +24,6 @@ export const emailInputs = [
         placeholder: 'Cypress Gray',
         required: true,
         gridSm: 6,
-        isAutoFocused: true,
     },
     {
         name: 'email',

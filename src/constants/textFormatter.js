@@ -1,5 +1,6 @@
 export const initialValues = {
     output: '',
+    selected: '',
     lowerCase: '',
     upperCase: '',
     capitalCase: '',
@@ -8,51 +9,47 @@ export const initialValues = {
     snakeCase: '',
     headerCase: '',
     constantCase: '',
+    check_lowerCase: false,
+    check_upperCase: false,
+    check_capitalCase: false,
+    check_sentenceCase: false,
+    check_camelCase: false,
+    check_snakeCase: false,
+    check_headerCase: false,
+    check_constantCase: false,
 }
-
-// export const initialValues = {
-//     output: 'the blue fish',
-//     lowerCase: 'the blue fish',
-//     upperCase: 'THE BLUE FISH',
-//     capitalCase: 'The Blue Fish',
-//     sentenceCase: 'The blue fish',
-//     camelCase: 'theBlueFish',
-//     snakeCase: 'the_blue_fish',
-//     headerCase: 'the-blue-fish',
-//     constantCase: 'THE_BLUE_FISH',
-// }
 
 export const cards = [
     {
         name: 'lowerCase',
-        title: 'Lowercase',
+        label: 'Lowercase',
     },
     {
         name: 'upperCase',
-        title: 'Uppercase',
+        label: 'Uppercase',
     },
     {
         name: 'capitalCase',
-        title: 'Capitalize',
+        label: 'Capitalize',
     },
     {
         name: 'sentenceCase',
-        title: 'Sentence',
+        label: 'Sentence',
     },
     {
         name: 'camelCase',
-        title: 'Camel case',
+        label: 'Camel case',
     },
     {
         name: 'snakeCase',
-        title: 'Snake case',
+        label: 'Snake case',
     },
     {
         name: 'headerCase',
-        title: 'Kebab case',
+        label: 'Kebab case',
     },
     {
         name: 'constantCase',
-        title: 'Constant',
+        label: 'Constant',
     },
 ]

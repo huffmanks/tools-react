@@ -1,33 +1,29 @@
-import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField'
-import InputAdornment from '@mui/material/InputAdornment'
-import IconButton from '@mui/material/IconButton'
-import DeleteIcon from '@mui/icons-material/Delete'
+import { Grid, TextField, IconButton, InputAdornment } from '@mui/material'
 
-const Textarea = ({ previousOutputRef, handleFocus, handleBlur, handleClear }) => {
-    // const Textarea = ({ previousOutputRef, values, handleFocus, handleChange, handleBlur, handleClear }) => {
+import ClearIcon from '@mui/icons-material/Clear'
+
+const Textarea = ({ values, handleChange, handleClear }) => {
     return (
         <>
             <Grid item xs={12}>
                 <TextField
-                    ref={previousOutputRef}
+                    className='textarea'
                     autoFocus
                     fullWidth
                     variant='outlined'
                     label='Insert Text'
                     name='output'
-                    // value={values.output}
-                    onFocus={handleFocus}
-                    onChange={(e) => e.target.value}
-                    // onChange={handleChange}
-                    onBlur={handleBlur}
+                    value={values.output}
+                    onFocus={(e) => e.target.select()}
+                    onChange={handleChange}
                     multiline
-                    rows={2}
+                    minRows={1}
+                    maxRows={2}
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position='end'>
-                                <IconButton aria-label='clear value' edge='end' onClick={handleClear}>
-                                    <DeleteIcon />
+                                <IconButton aria-label='clear input' onClick={handleClear} edge='start'>
+                                    <ClearIcon />
                                 </IconButton>
                             </InputAdornment>
                         ),

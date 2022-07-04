@@ -1,85 +1,75 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { camelCase, capitalCase, constantCase, headerCase, sentenceCase, snakeCase } from 'change-case'
 import { lowerCase } from 'lower-case'
 import { upperCase } from 'upper-case'
 import { initialValues } from '../../constants/textFormatter'
-import { usePrevious } from '../../hooks/usePrevious'
 
 import Grid from '@mui/material/Grid'
 
 import PageTitle from '../../layout/PageTitle'
 import Textarea from './Textarea'
-import PreviousOutput from './PreviousOutput'
+import ActionGroup from './ActionGroup'
 import Cards from './Cards'
 
 const TextFormatter = () => {
-    const previousOutputRef = useRef()
-
     const [values, setValues] = useState(initialValues)
-    const [textBlurred, setTextBlurred] = useState(false)
-    const [saved, setSaved] = useState({})
 
-    const previousValues = usePrevious(values)
-
-    const handleFocus = () => {
-        setTextBlurred(false)
-    }
+    const [saved, setSaved] = useState([])
+    const [savedId, setSavedId] = useState(1)
 
     const handleChange = (e) => {
-        e.preventDefault()
-        // const { name, value } = e.target
+        const { name, value, type, checked } = e.target
 
-        // setValues({
-        //     ...values,
-        //     [name]: value,
-        //     lowerCase: lowerCase(value),
-        //     upperCase: upperCase(value),
-        //     capitalCase: capitalCase(value),
-        //     sentenceCase: sentenceCase(value),
-        //     camelCase: camelCase(value),
-        //     snakeCase: snakeCase(value),
-        //     headerCase: lowerCase(headerCase(value)),
-        //     constantCase: constantCase(value),
-        // })
-    }
+        if (type === 'checkbox') {
+            setValues({
+                ...values,
+                [name]: checked,
+            })
+        }
 
-    const handleBlur = (e) => {
-        const { name, value } = e.target
+        if (type === 'textarea') {
+            setValues({
+                ...values,
+                [name]: value,
+                output: value,
+                lowerCase: lowerCase(value),
+                upperCase: upperCase(value),
+                capitalCase: capitalCase(value),
+                sentenceCase: sentenceCase(value),
+                camelCase: camelCase(value),
+                snakeCase: snakeCase(value),
+                headerCase: lowerCase(headerCase(value)),
+                constantCase: constantCase(value),
+            })
+        }
 
-        setValues({
-            ...values,
-            [name]: value,
-            lowerCase: lowerCase(value),
-            upperCase: upperCase(value),
-            capitalCase: capitalCase(value),
-            sentenceCase: sentenceCase(value),
-            camelCase: camelCase(value),
-            snakeCase: snakeCase(value),
-            headerCase: lowerCase(headerCase(value)),
-            constantCase: constantCase(value),
-        })
-
-        setTextBlurred(true)
+        console.log(type)
     }
 
     const handleCopy = (name) => {
         return navigator.clipboard.writeText(values[name])
     }
 
-    const handleSave = (e) => {
-        const { name, value } = e.target
-
-        setSaved({
-            ...saved,
-            [name]: value,
-        })
+    const handleReset = () => {
+        setValues(initialValues)
+        setSaved([])
+        setSavedId(1)
     }
 
-    const handleReset = () => {
-        setValues(previousValues)
+    const handleSave = () => {
+        if (!saved.some((item) => item.value === values.camelCase)) {
+            setSaved([
+                ...saved,
+                {
+                    id: savedId,
+                    value: values.camelCase,
+                    label: values.output,
+                },
+            ])
 
-        // previousOutputRef.select()
+            setSavedId((prev) => prev + 1)
+        }
     }
 
     const handleClear = () => {
@@ -91,9 +81,9 @@ const TextFormatter = () => {
             <PageTitle>Text Formatter</PageTitle>
 
             <Grid container spacing={5}>
-                <Textarea previousOutputRef={previousOutputRef} values={values} handleFocus={handleFocus} handleChange={handleChange} handleBlur={handleBlur} handleClear={handleClear} />
-                <PreviousOutput previousValues={previousValues} textBlurred={textBlurred} handleReset={handleReset} />
-                <Cards values={values} handleCopy={handleCopy} handleSave={handleSave} />
+                <Textarea values={values} handleChange={handleChange} handleClear={handleClear} />
+                <ActionGroup values={values} saved={saved} handleChange={handleChange} handleReset={handleReset} handleSave={handleSave} />
+                <Cards values={values} handleChange={handleChange} handleCopy={handleCopy} />
             </Grid>
         </>
     )

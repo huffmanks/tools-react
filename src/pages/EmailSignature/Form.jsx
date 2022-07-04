@@ -22,7 +22,6 @@ const Form = () => {
                     {emailInputs.map((field) => (
                         <Grid key={field.name} item sm={field.gridSm} xs={12}>
                             <TextField
-                                autoFocus={field.isAutoFocused}
                                 fullWidth
                                 variant='outlined'
                                 required={field.required ?? false}

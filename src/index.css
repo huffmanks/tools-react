@@ -31,3 +31,7 @@ p {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.textarea .MuiInputBase-multiline textarea {
+    overflow: hidden;
+}
