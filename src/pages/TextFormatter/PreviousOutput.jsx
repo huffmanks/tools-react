@@ -11,7 +11,7 @@ const PreviousOutput = ({ previousValues, textBlurred, handleReset }) => {
                     variant='outlined'
                     label='Previous'
                     name='previousOutput'
-                    value={!textBlurred ? '' : previousValues?.output ? previousValues?.output : ''}
+                    value={previousValues?.output ?? ''}
                     InputProps={{
                         readOnly: true,
                         endAdornment: (

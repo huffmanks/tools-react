@@ -4,7 +4,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 
-const Textarea = ({ previousOutputRef, values, handleFocus, handleChange, handleBlur, handleClear }) => {
+const Textarea = ({ previousOutputRef, handleFocus, handleBlur, handleClear }) => {
+    // const Textarea = ({ previousOutputRef, values, handleFocus, handleChange, handleBlur, handleClear }) => {
     return (
         <>
             <Grid item xs={12}>
@@ -15,9 +16,10 @@ const Textarea = ({ previousOutputRef, values, handleFocus, handleChange, handle
                     variant='outlined'
                     label='Insert Text'
                     name='output'
-                    value={values.output}
+                    // value={values.output}
                     onFocus={handleFocus}
-                    onChange={handleChange}
+                    onChange={(e) => e.target.value}
+                    // onChange={handleChange}
                     onBlur={handleBlur}
                     multiline
                     rows={2}

@@ -27,6 +27,24 @@ const TextFormatter = () => {
     }
 
     const handleChange = (e) => {
+        e.preventDefault()
+        // const { name, value } = e.target
+
+        // setValues({
+        //     ...values,
+        //     [name]: value,
+        //     lowerCase: lowerCase(value),
+        //     upperCase: upperCase(value),
+        //     capitalCase: capitalCase(value),
+        //     sentenceCase: sentenceCase(value),
+        //     camelCase: camelCase(value),
+        //     snakeCase: snakeCase(value),
+        //     headerCase: lowerCase(headerCase(value)),
+        //     constantCase: constantCase(value),
+        // })
+    }
+
+    const handleBlur = (e) => {
         const { name, value } = e.target
 
         setValues({
@@ -41,9 +59,7 @@ const TextFormatter = () => {
             headerCase: lowerCase(headerCase(value)),
             constantCase: constantCase(value),
         })
-    }
 
-    const handleBlur = () => {
         setTextBlurred(true)
     }
 
