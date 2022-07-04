@@ -15,7 +15,7 @@
     </p>
     <br />
     <a href="https://tools.huffmanks.com">
-        <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/screenshot.png" alt="example screenshot">
+        <img src="https://github.com/huffmanks/tools-react/blob/main/public/images/tools-preview.png" alt="example screenshot">
     </a>
 </div>
 
@@ -65,9 +65,18 @@ To get a local copy up and running follow these simple example steps.
 
 ## Roadmap
 
+-   [x] Aspect Ratio Calculator
+-   [x] Color Picker
+-   [x] Unit Converter
+-   [x] Email Signature
+-   [x] Text formatter
+    -   [x] New card displays and style
+    -   [ ] Previous inputs, can toggle back
 -   [ ] Password generator
 -   [ ] Number picker
--   [ ] Calculator
+    -   [ ] Get a random number
+    -   [ ] Get a random number from a list of numbers
+    -   [ ] Get multiple numbers from a list of numbers
 
 See the [open issues](https://github.com/huffmanks/tools-react/issues) for a full list of proposed features (and known issues).
 
