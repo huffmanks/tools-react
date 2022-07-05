@@ -28,7 +28,7 @@ const TextFormatter = () => {
             })
         }
 
-        if (type === 'textarea') {
+        if (type === 'textarea' || name === 'selected') {
             setValues({
                 ...values,
                 [name]: value,
@@ -43,8 +43,6 @@ const TextFormatter = () => {
                 constantCase: constantCase(value),
             })
         }
-
-        console.log(type)
     }
 
     const handleCopy = (name) => {
