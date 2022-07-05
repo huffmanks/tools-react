@@ -50,7 +50,7 @@ I wanted to build some tools that would help speed up my development process. A 
 \
 [Google Color Picker](https://www.google.com/search?q=color+picker)
 \
-[Web Tools Color Picker](https://tools.huffmanks/color-picker)
+[Web Tools Color Picker](https://tools.huffmanks.com/color-picker)
 
 -   Option to copy any code not just HEX.
 -   Similar shades displayed so I could pick lighter/darker versions.
@@ -64,7 +64,7 @@ I wanted to build some tools that would help speed up my development process. A 
 \
 [Google Unit Converter](https://www.google.com/search?q=unit+converter)
 \
-[Web Tools Unit Converter](https://tools.huffmanks/unit-converter)
+[Web Tools Unit Converter](https://tools.huffmanks.com/unit-converter)
 
 -   Wanted all the units to be displayed so I could see the differences.
 
