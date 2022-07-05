@@ -52,8 +52,6 @@ I wanted to build some tools that would help speed up my development process. A 
 \
 [Web Tools Color Picker](https://tools.huffmanks/color-picker)
 
-\
-
 -   Option to copy any code not just HEX.
 -   Similar shades displayed so I could pick lighter/darker versions.
 
@@ -67,8 +65,6 @@ I wanted to build some tools that would help speed up my development process. A 
 [Google Unit Converter](https://www.google.com/search?q=unit+converter)
 \
 [Web Tools Unit Converter](https://tools.huffmanks/unit-converter)
-
-\
 
 -   Wanted all the units to be displayed so I could see the differences.
 
@@ -117,11 +113,14 @@ To get a local copy up and running follow these simple example steps.
     -   [x] Previous inputs, can toggle back
     -   [ ] Select all checkbox
 -   [ ] Password generator
--   [ ] Number picker - [ ] Get a random number - [ ] Get a random number from a list of numbers - [ ] Get multiple numbers from a list of numbers
+-   [ ] Number picker
+    -   [ ] Get a random number
+    -   [ ] Get a random number from a list of numbers
+    -   [ ] Get multiple numbers from a list of numbers
 
 \
- \
- See the [open issues](https://github.com/huffmanks/tools-react/issues) for a full list of proposed features (and known issues).
+\
+See the [open issues](https://github.com/huffmanks/tools-react/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
