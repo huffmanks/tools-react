@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { camelCase, capitalCase, constantCase, headerCase, sentenceCase, snakeCase } from 'change-case'
-import { lowerCase } from 'lower-case'
-import { upperCase } from 'upper-case'
+import { camelCase, constantCase, headerCase, sentenceCase, snakeCase } from 'change-case'
+import { titleCase } from '../../utilities/titleCase'
 import { initialValues } from '../../constants/textFormatter'
 
 import Grid from '@mui/material/Grid'
@@ -17,6 +16,7 @@ const TextFormatter = () => {
 
     const [saved, setSaved] = useState([])
     const [savedId, setSavedId] = useState(1)
+    const [checkedCards, setCheckedCards] = useState([])
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target
@@ -33,13 +33,13 @@ const TextFormatter = () => {
                 ...values,
                 [name]: value,
                 output: value,
-                lowerCase: lowerCase(value),
-                upperCase: upperCase(value),
-                capitalCase: capitalCase(value),
+                lowerCase: value.toLowerCase(),
+                upperCase: value.toUpperCase(),
+                capitalCase: titleCase(value),
                 sentenceCase: sentenceCase(value),
                 camelCase: camelCase(value),
                 snakeCase: snakeCase(value),
-                headerCase: lowerCase(headerCase(value)),
+                headerCase: headerCase(value).toLowerCase(),
                 constantCase: constantCase(value),
             })
         }
@@ -56,12 +56,12 @@ const TextFormatter = () => {
     }
 
     const handleSave = () => {
-        if (!saved.some((item) => item.value === values.camelCase)) {
+        if (!saved.some((item) => item.value === values.output)) {
             setSaved([
                 ...saved,
                 {
                     id: savedId,
-                    value: values.camelCase,
+                    value: values.output,
                     label: values.output,
                 },
             ])
@@ -74,6 +74,14 @@ const TextFormatter = () => {
         setValues(initialValues)
     }
 
+    useEffect(() => {
+        const filtered = Object.fromEntries(Object.entries(values).filter(([key, value]) => key.startsWith('check_') && value === true))
+
+        const filtArr = Object.keys(filtered).map((item) => item.replace('check_', ''))
+
+        setCheckedCards(filtArr)
+    }, [values])
+
     return (
         <>
             <PageTitle>Text Formatter</PageTitle>
@@ -81,7 +89,7 @@ const TextFormatter = () => {
             <Grid container spacing={5}>
                 <Textarea values={values} handleChange={handleChange} handleClear={handleClear} />
                 <ActionGroup values={values} saved={saved} handleChange={handleChange} handleReset={handleReset} handleSave={handleSave} />
-                <Cards values={values} handleChange={handleChange} handleCopy={handleCopy} />
+                <Cards values={values} checkedCards={checkedCards} handleChange={handleChange} handleCopy={handleCopy} />
             </Grid>
         </>
     )

@@ -33,6 +33,29 @@
   </ol>
 </details>
 
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+I wanted to build some tools that would help speed up my development process. A couple of these tools exist on Google but I wanted some extra or different features.
+
+![Color Picker](https://github.com/huffmanks/tools-react/blob/main/public/images/color-picker-preview.png)
+
+[Google Color Picker](https://www.google.com/search?q=color+picker)
+
+-   Option to copy any code not just HEX.
+-   Similar shades displayed so I could pick lighter/darker versions.
+
+![Unit Converter](https://github.com/huffmanks/tools-react/blob/main/public/images/unit-converter-preview.png)
+
+[Google Unit Converter](https://www.google.com/search?q=unit+converter)
+
+-   Wanted all the units to be displayed so I could see the differences.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- BUILT WITH -->
+
 ## Built With
 
 -   [React.js](https://reactjs.org/)
@@ -71,7 +94,8 @@ To get a local copy up and running follow these simple example steps.
 -   [x] Email Signature
 -   [x] Text formatter
     -   [x] New card displays and style
-    -   [ ] Previous inputs, can toggle back
+    -   [x] Previous inputs, can toggle back
+    -   [ ] Select all checkbox
 -   [ ] Password generator
 -   [ ] Number picker
     -   [ ] Get a random number
