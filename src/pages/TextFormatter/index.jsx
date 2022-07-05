@@ -35,7 +35,7 @@ const TextFormatter = () => {
                 output: value,
                 lowerCase: value.toLowerCase(),
                 upperCase: value.toUpperCase(),
-                capitalCase: titleCase(value),
+                capitalCase: titleCase(value.toLowerCase()),
                 sentenceCase: sentenceCase(value),
                 camelCase: camelCase(value),
                 snakeCase: snakeCase(value),
