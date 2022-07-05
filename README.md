@@ -20,11 +20,13 @@
 </div>
 
 <br />
+<br />
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -32,24 +34,33 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
+<br />
+<br />
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
 I wanted to build some tools that would help speed up my development process. A couple of these tools exist on Google but I wanted some extra or different features.
-
+\
+\
 ![Color Picker](https://github.com/huffmanks/tools-react/blob/main/public/images/color-picker-preview.png)
-
+\
+\
 [Google Color Picker](https://www.google.com/search?q=color+picker)
+[Web Tools Color Picker](https://tools.huffmanks/color-picker)
+\
 
 -   Option to copy any code not just HEX.
 -   Similar shades displayed so I could pick lighter/darker versions.
-
-![Unit Converter](https://github.com/huffmanks/tools-react/blob/main/public/images/unit-converter-preview.png)
-
-[Google Unit Converter](https://www.google.com/search?q=unit+converter)
-
+    \
+    \
+    ![Unit Converter](https://github.com/huffmanks/tools-react/blob/main/public/images/unit-converter-preview.png)
+    \
+    \
+    [Google Unit Converter](https://www.google.com/search?q=unit+converter)
+    [Web Tools Unit Converter](https://tools.huffmanks/unit-converter)
+    \
+    \
 -   Wanted all the units to be displayed so I could see the differences.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -77,6 +88,7 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     git clone https://github.com/huffmanks/tools-react.git
     ```
+    \
 2. Install NPM packages
     ```sh
     yarn
@@ -97,12 +109,10 @@ To get a local copy up and running follow these simple example steps.
     -   [x] Previous inputs, can toggle back
     -   [ ] Select all checkbox
 -   [ ] Password generator
--   [ ] Number picker
-    -   [ ] Get a random number
-    -   [ ] Get a random number from a list of numbers
-    -   [ ] Get multiple numbers from a list of numbers
-
-See the [open issues](https://github.com/huffmanks/tools-react/issues) for a full list of proposed features (and known issues).
+-   [ ] Number picker - [ ] Get a random number - [ ] Get a random number from a list of numbers - [ ] Get multiple numbers from a list of numbers
+        \
+         \
+         See the [open issues](https://github.com/huffmanks/tools-react/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
