@@ -7,14 +7,14 @@ import Form from './Form'
 import Output from './Output'
 
 const AspectRatio = () => {
-    const { values, handleChange } = useFormControls(initialValues)
+    const { values, handleFocus, handleChange } = useFormControls(initialValues)
 
     return (
         <>
             <PageTitle>Aspect Ratio</PageTitle>
 
             <Grid container spacing={5}>
-                <Form values={values} handleChange={handleChange} />
+                <Form values={values} handleFocus={handleFocus} handleChange={handleChange} />
 
                 <Output values={values} />
             </Grid>

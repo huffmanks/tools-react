@@ -3,6 +3,7 @@ export const initialValues = {
     originalHeight: '',
     selectedType: 'width',
     newSize: '',
+    aspectRatio: '',
 }
 
 export const aspectInputs = [

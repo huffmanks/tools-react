@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+
 import { aspectInputs } from '../../constants/aspectRatio'
 
 import Grid from '@mui/material/Grid'
@@ -9,10 +11,7 @@ import TextField from '@mui/material/TextField'
 import RadioGroup from '@mui/material/RadioGroup'
 import Radio from '@mui/material/Radio'
 
-import './_index.css'
-import { Fragment } from 'react'
-
-const Form = ({ values, handleChange }) => {
+const Form = ({ values, handleFocus, handleChange }) => {
     return (
         <Grid item container spacing={2} md={6}>
             <Grid item xs={12}>
@@ -30,6 +29,7 @@ const Form = ({ values, handleChange }) => {
                             placeholder={input.placeholder}
                             name={input.name}
                             value={values[input.name]}
+                            onFocus={handleFocus}
                             onChange={handleChange}
                             autoComplete='none'
                         />

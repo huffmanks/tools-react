@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import { camelCase, constantCase, headerCase, sentenceCase, snakeCase } from 'change-case'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { uniqueId } from '../../utilities/uniqueId'
 import { titleCase } from '../../utilities/titleCase'
 import { initialValues } from '../../constants/textFormatter'
 
@@ -14,9 +16,13 @@ import Cards from './Cards'
 const TextFormatter = () => {
     const [values, setValues] = useState(initialValues)
 
-    const [saved, setSaved] = useState([])
-    const [savedId, setSavedId] = useState(1)
+    const [saved, setSaved] = useLocalStorage('webtools-v1-saved', [])
+
+    // const [saved, setSaved] = useState([])
+    const [savedId, setSavedId] = useState(uniqueId)
+
     const [checkedCards, setCheckedCards] = useState([])
+    const [checkAll, setCheckAll] = useState(false)
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target
@@ -41,6 +47,35 @@ const TextFormatter = () => {
                 snakeCase: snakeCase(value),
                 headerCase: headerCase(value).toLowerCase(),
                 constantCase: constantCase(value),
+            })
+        }
+    }
+
+    const handleCheckAll = () => {
+        setCheckAll((prev) => !prev)
+        if (!checkAll) {
+            setValues({
+                ...values,
+                check_lowerCase: true,
+                check_upperCase: true,
+                check_capitalCase: true,
+                check_sentenceCase: true,
+                check_camelCase: true,
+                check_snakeCase: true,
+                check_headerCase: true,
+                check_constantCase: true,
+            })
+        } else {
+            setValues({
+                ...values,
+                check_lowerCase: false,
+                check_upperCase: false,
+                check_capitalCase: false,
+                check_sentenceCase: false,
+                check_camelCase: false,
+                check_snakeCase: false,
+                check_headerCase: false,
+                check_constantCase: false,
             })
         }
     }
@@ -89,7 +124,7 @@ const TextFormatter = () => {
             <Grid container spacing={5}>
                 <Textarea values={values} handleChange={handleChange} handleClear={handleClear} />
                 <ActionGroup values={values} saved={saved} handleChange={handleChange} handleReset={handleReset} handleSave={handleSave} />
-                <Cards values={values} checkedCards={checkedCards} handleChange={handleChange} handleCopy={handleCopy} />
+                <Cards values={values} checkedCards={checkedCards} checkAll={checkAll} handleCheckAll={handleCheckAll} handleChange={handleChange} handleCopy={handleCopy} />
             </Grid>
         </>
     )
