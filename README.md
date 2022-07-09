@@ -108,11 +108,11 @@ To get a local copy up and running follow these simple example steps.
 [Web Tools Unit Converter](https://tools.huffmanks.com/unit-converter)
 
 ```http
-GET https://tools.huffmanks.com/unit-converter/?m=length&left=in&right=km
+GET /?m=length&left=in&right=km
 ```
 
 ```http
-GET https://tools.huffmanks.com/unit-converter/?m=2&left=4&right=5
+GET /?m=2&left=4&right=5
 ```
 
 <br />
