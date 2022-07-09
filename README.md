@@ -133,8 +133,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 ### Digital Storage
 
-<br />
-
 | Unit      | Short |
 | :-------- | :---- |
 | terabytes | TB    |
@@ -146,8 +144,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 <br />
 
 ### Length
-
-<br />
 
 | Unit        | Short |
 | :---------- | :---- |
@@ -163,8 +159,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 <br />
 
 ### Volume
-
-<br />
 
 | Unit              | Short |
 | :---------------- | :---- |
@@ -182,8 +176,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 ### Temperature
 
-<br />
-
 | Unit       | Short |
 | :--------- | :---- |
 | celsius    | C     |
@@ -193,8 +185,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 <br />
 
 ### Time
-
-<br />
 
 | Unit         | Short |
 | :----------- | :---- |
@@ -210,8 +200,6 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 <br />
 
 ### Weight
-
-<br />
 
 | Unit       | Short |
 | :--------- | :---- |
