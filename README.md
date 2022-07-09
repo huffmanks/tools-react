@@ -110,11 +110,11 @@ To get a local copy up and running follow these simple example steps.
 [BASE_URL][https://tools.huffmanks.com/unit-converter]
 
 ```http
-BASE_URL/?m=length&left=in&right=km
+https://tools.huffmanks.com/unit-converter/?m=length&left=in&right=km
 ```
 
 ```http
-GET /?m=2&left=4&right=5
+https://tools.huffmanks.com/unit-converter/?m=2&left=4&right=5
 ```
 
 <br />
