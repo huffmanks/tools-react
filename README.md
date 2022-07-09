@@ -118,7 +118,6 @@ GET /?m=2&left=4&right=5
 ```
 
 <br />
-<br />
 
 | Parameter | Type                               | Description       | Example   |
 | :-------- | :--------------------------------- | :---------------- | :-------- |
@@ -127,9 +126,10 @@ GET /?m=2&left=4&right=5
 | `right`   | `string` &nbsp; OR &nbsp; `number` | Right unit select | km, 5     |
 
 <br />
-<br />
 
 The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
+
+<br />
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
