@@ -107,14 +107,12 @@ To get a local copy up and running follow these simple example steps.
 
 [Web Tools Unit Converter](https://tools.huffmanks.com/unit-converter)
 
-[BASE_URL][https://tools.huffmanks.com/unit-converter]
-
 ```http
-https://tools.huffmanks.com/unit-converter/?m=length&left=in&right=km
+GET https://tools.huffmanks.com/unit-converter/?m=length&left=in&right=km
 ```
 
 ```http
-https://tools.huffmanks.com/unit-converter/?m=2&left=4&right=5
+GET https://tools.huffmanks.com/unit-converter/?m=2&left=4&right=5
 ```
 
 <br />
