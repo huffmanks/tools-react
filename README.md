@@ -135,14 +135,13 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :-------------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| terabytes | TB |
-| gigabytes | GB |
-| megabytes | MB |
-| kilobytes | KB |
-| bytes | B |
+| Unit      | Short |
+| :-------- | :---- |
+| terabytes | TB    |
+| gigabytes | GB    |
+| megabytes | MB    |
+| kilobytes | KB    |
+| bytes     | B     |
 
 <br />
 
@@ -150,17 +149,16 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :---------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| miles | mi |
-| yards | yd |
-| feet | ft |
-| inches | in |
-| kilometers | km |
-| meters | m |
-| centimeters | cm |
-| millimeters | mm |
+| Unit        | Short |
+| :---------- | :---- |
+| miles       | mi    |
+| yards       | yd    |
+| feet        | ft    |
+| inches      | in    |
+| kilometers  | km    |
+| meters      | m     |
+| centimeters | cm    |
+| millimeters | mm    |
 
 <br />
 
@@ -168,18 +166,17 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :---------------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| US liquid gallons | gal |
-| US liquid quarts | qt |
-| US liquid pints | p |
-| US legal cups | c |
-| US fluid ounces | oz |
-| US tablespoons | tbsp |
-| US teaspoons | tsp |
-| liters | L |
-| milliliters | mL |
+| Unit              | Short |
+| :---------------- | :---- |
+| US liquid gallons | gal   |
+| US liquid quarts  | qt    |
+| US liquid pints   | p     |
+| US legal cups     | c     |
+| US fluid ounces   | oz    |
+| US tablespoons    | tbsp  |
+| US teaspoons      | tsp   |
+| liters            | L     |
+| milliliters       | mL    |
 
 <br />
 
@@ -187,12 +184,11 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :---------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| celsius | C |
-| fahrenheit | F |
-| kelvin | K |
+| Unit       | Short |
+| :--------- | :---- |
+| celsius    | C     |
+| fahrenheit | F     |
+| kelvin     | K     |
 
 <br />
 
@@ -200,17 +196,16 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :----------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| years | yr |
-| months | mo |
-| weeks | wk |
-| days | d |
-| hours | hr |
-| minutes | min |
-| seconds | s |
-| milliseconds | ms |
+| Unit         | Short |
+| :----------- | :---- |
+| years        | yr    |
+| months       | mo    |
+| weeks        | wk    |
+| days         | d     |
+| hours        | hr    |
+| minutes      | min   |
+| seconds      | s     |
+| milliseconds | ms    |
 
 <br />
 
@@ -218,15 +213,14 @@ The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <br />
 
-| :--------- | ---------------------------------- |
-| Unit | Short |
-| :-------- | :--------------------------------- |
-| US tons | ton |
-| pounds | lbs |
-| ounces | oz |
-| kilograms | kg |
-| grams | g |
-| milligrams | mg |
+| Unit       | Short |
+| :--------- | :---- |
+| US tons    | ton   |
+| pounds     | lbs   |
+| ounces     | oz    |
+| kilograms  | kg    |
+| grams      | g     |
+| milligrams | mg    |
 
 <br />
 
