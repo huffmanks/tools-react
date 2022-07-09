@@ -117,17 +117,16 @@ GET /?m=length&left=in&right=km
 GET /?m=2&left=4&right=5
 ```
 
-/
-/
-
+<br />
+<br />
 | Parameter | Type                               | Description       | Example   |
 | :-------- | :--------------------------------- | :---------------- | :-------- |
 | `m`       | `string` &nbsp; OR &nbsp; `number` | Measurement types | length, 2 |
 | `left`    | `string` &nbsp; OR &nbsp; `number` | Left unit select  | in, 4     |
 | `right`   | `string` &nbsp; OR &nbsp; `number` | Right unit select | km, 5     |
 
-/
-/
+<br />
+<br />
 The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
