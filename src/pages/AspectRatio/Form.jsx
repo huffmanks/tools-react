@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField'
 import RadioGroup from '@mui/material/RadioGroup'
 import Radio from '@mui/material/Radio'
 
-const Form = ({ values, handleFocus, handleChange }) => {
+const Form = ({ values, handleFocus, handleChange, handleCalculate }) => {
     return (
         <Grid item container spacing={2} md={6}>
             <Grid item xs={12}>
@@ -31,6 +31,7 @@ const Form = ({ values, handleFocus, handleChange }) => {
                             value={values[input.name]}
                             onFocus={handleFocus}
                             onChange={handleChange}
+                            onBlur={handleCalculate}
                             autoComplete='none'
                         />
                     </Grid>

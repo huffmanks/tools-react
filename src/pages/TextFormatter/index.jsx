@@ -18,7 +18,6 @@ const TextFormatter = () => {
 
     const [saved, setSaved] = useLocalStorage('webtools-v1-saved', [])
 
-    // const [saved, setSaved] = useState([])
     const [savedId, setSavedId] = useState(uniqueId)
 
     const [checkedCards, setCheckedCards] = useState([])

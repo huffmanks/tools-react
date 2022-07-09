@@ -29,6 +29,7 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#instructions">Instructions</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -100,6 +101,32 @@ To get a local copy up and running follow these simple example steps.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- INSTRUCTIONS -->
+
+## Instructions
+
+[Web Tools Unit Converter](https://tools.huffmanks.com/unit-converter)
+
+BASE URL: https://tools.huffmanks.com/unit-converter
+
+```http
+/?m=length&left=in&right=km
+```
+
+```http
+/?m=2&left=4&right=5
+```
+
+| Parameter | Type                 | Description       | Example   |
+| :-------- | :------------------- | :---------------- | :-------- |
+| `m`       | `string` OR `number` | Measurement types | length, 2 |
+| `left`    | `string` OR `number` | Left unit select  | in, 4     |
+| `right`   | `string` OR `number` | Right unit select | km, 5     |
+
+The string can any variant of the word. i.e. kilometers, kilo, km, etc.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 
 ## Roadmap
@@ -109,9 +136,6 @@ To get a local copy up and running follow these simple example steps.
 -   [x] Unit Converter
 -   [x] Email Signature
 -   [x] Text formatter
-    -   [x] New card displays and style
-    -   [x] Previous inputs, can toggle back
-    -   [ ] Select all checkbox
 -   [ ] Password generator
 -   [ ] Number picker
     -   [ ] Get a random number

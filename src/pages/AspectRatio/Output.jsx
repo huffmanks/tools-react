@@ -1,36 +1,46 @@
-import { useEffect, useState } from 'react'
-import { getAspectRatio } from '../../utilities/getAspectRatio'
+import { aspectOutput } from '../../constants/aspectRatio'
 
-import { Box, Grid, Chip, Stack, Button, Typography } from '@mui/material'
+import { Box, Grid, Chip, TextField, InputAdornment, IconButton, Stack } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 const Output = ({ values }) => {
-    const [newOtherSize, setNewOtherSize] = useState(null)
-    const [aspectRatio, setAspectRatio] = useState(null)
-
-    console.log(aspectRatio)
-
-    useEffect(() => {
-        if (values.originalWidth && values.originalHeight) {
-            const outputAspect = () => {
-                if (values.selectedType === 'width') {
-                    return Math.round((values.originalHeight / values.originalWidth) * values.newSize * 100) / 100
-                } else {
-                    return Math.round((values.originalWidth / values.originalHeight) * values.newSize * 100) / 100
-                }
-            }
-            setNewOtherSize(outputAspect)
-            if (newOtherSize) {
-                setAspectRatio(getAspectRatio(parseInt(values.originalWidth), parseInt(values.originalHeight)))
-            }
-        }
-    }, [values, newOtherSize])
+    const dimensions =
+        values.originalWidth && values.originalHeight && values.selectedType === 'width'
+            ? `${values.originalWidth} x ${values.originalHeight}`
+            : values.originalWidth && values.originalHeight && values.selectedType === 'height'
+            ? `${values.originalHeight} x ${values.originalWidth}`
+            : '1920 x 1080'
 
     return (
         <Grid item container spacing={2} md={6}>
             <Grid item xs={12}>
-                <Chip label='Output' color='primary' component='div' sx={{ height: 48, marginBottom: '2rem' }} />
+                <Chip label='Output' color='primary' component='div' sx={{ marginBottom: '2rem' }} />
             </Grid>
+
+            {aspectOutput.map((output, index) => (
+                <Grid key={index} item sm={6} xs={12}>
+                    <TextField
+                        fullWidth
+                        focused
+                        readOnly
+                        variant='outlined'
+                        label={output.label}
+                        name={output.name}
+                        value={values[output.name]}
+                        autoComplete='none'
+                        InputProps={{
+                            readOnly: true,
+                            endAdornment: (
+                                <InputAdornment position='end'>
+                                    <IconButton aria-label='copy value to clipboard' onClick={() => navigator.clipboard.writeText(values[output.name])} edge='end'>
+                                        <ContentCopyIcon />
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+                </Grid>
+            ))}
 
             <Grid item xs={12}>
                 <Box
@@ -39,50 +49,23 @@ const Output = ({ values }) => {
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        minWidth: '150px',
-                        maxWidth: 'calc(100% - 105px)',
-                        minHeight: '200px',
-                        maxHeight: '250px',
+                        minWidth: '125px',
+                        maxWidth: '100%',
+                        minHeight: '50px',
+                        maxHeight: '400px',
                         margin: '0 auto',
-                        padding: '1rem',
-                        aspectRatio: aspectRatio ?? 1920 / 1080,
+                        aspectRatio: values.aspectMultiplier ?? 1920 / 1080,
                         backgroundColor: 'secondary.main',
                         borderRadius: '4px',
                     }}>
-                    {aspectRatio && (
-                        <Stack spacing={1}>
-                            <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
-                                <div>Width:</div>
-                                <Button
-                                    variant='contained'
-                                    onClick={() => navigator.clipboard.writeText(values.selectedType === 'width' ? values.newSize : newOtherSize)}
-                                    endIcon={<ContentCopyIcon style={{ fontSize: '16px' }} />}>
-                                    {values.selectedType === 'width' ? values.newSize : newOtherSize}
-                                </Button>
-                            </Stack>
-                            <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
-                                <Typography>Height:</Typography>
-                                <Button
-                                    variant='contained'
-                                    onClick={() => navigator.clipboard.writeText(values.selectedType === 'height' ? values.newSize : newOtherSize)}
-                                    endIcon={<ContentCopyIcon style={{ fontSize: '16px' }} />}>
-                                    {values.selectedType === 'height' ? values.newSize : newOtherSize}
-                                </Button>
-                            </Stack>
-
-                            <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
-                                <div>Aspect Ratio:</div>
-                                <div>{values.selectedType === 'width' ? (values.newSize / newOtherSize).toFixed(2) : (newOtherSize / values.newSize).toFixed(2)}</div>
-                            </Stack>
-                            <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
-                                <div>GCD:</div>
-                                <div>
-                                    {(values.selectedType === 'width' ? values.originalWidth : values.originalHeight) / aspectRatio}:
-                                    {(values.selectedType === 'height' ? values.originalWidth : values.originalHeight) / aspectRatio}
-                                </div>
-                            </Stack>
+                    <Stack spacing={1}>
+                        <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
+                            {dimensions}
                         </Stack>
-                    )}
+                        <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
+                            {values.aspectRatio ?? '16:9'}
+                        </Stack>
+                    </Stack>
                 </Box>
             </Grid>
         </Grid>

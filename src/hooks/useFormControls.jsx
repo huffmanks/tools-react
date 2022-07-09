@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { getColorOptionsInfo } from '../constants/emailSignature'
+import { getAspectGCD } from '../utilities/getAspectGCD'
 
 export const useFormControls = (initialValues) => {
     const [values, setValues] = useState(initialValues)
@@ -56,10 +57,51 @@ export const useFormControls = (initialValues) => {
                 themeColor: getColorOptionsInfo(value, 'defaultValue'),
                 placeholder: getColorOptionsInfo(value, 'defaultValue'),
             })
+        } else if (name === 'selectedType' && values.newSize) {
+            const aspectRatio = values.aspectRatio.split(':')
+
+            setValues({
+                ...values,
+                [name]: value,
+                newWidth: values.newHeight,
+                newHeight: values.newWidth,
+                aspectRatio: `${aspectRatio[1]}:${aspectRatio[0]}`,
+            })
         } else {
             setValues({
                 ...values,
                 [name]: value,
+            })
+        }
+    }
+
+    const handleCalculate = (e) => {
+        const { name, value } = e.target
+
+        if (values.originalWidth && values.originalHeight && values.newSize) {
+            const newOtherSize =
+                values.selectedType === 'width'
+                    ? Math.round((values.originalHeight / values.originalWidth) * values.newSize * 100) / 100
+                    : Math.round((values.originalWidth / values.originalHeight) * values.newSize * 100) / 100
+
+            const newWidth = values.selectedType === 'width' ? values.newSize : newOtherSize
+            const newHeight = values.selectedType === 'height' ? values.newSize : newOtherSize
+
+            const aspectGCD = getAspectGCD(parseInt(values.originalWidth), parseInt(values.originalHeight))
+
+            const aspectMultiplier = (values.originalWidth / values.originalHeight).toFixed(2)
+
+            const aspectRatio = `${(values.selectedType === 'width' ? values.originalWidth : values.originalHeight) / aspectGCD}:${
+                (values.selectedType === 'height' ? values.originalWidth : values.originalHeight) / aspectGCD
+            }`
+
+            setValues({
+                ...values,
+                [name]: value,
+                newWidth,
+                newHeight,
+                aspectRatio,
+                aspectMultiplier,
             })
         }
     }
@@ -94,6 +136,7 @@ export const useFormControls = (initialValues) => {
         handleFocus,
         handleChange,
         handleBlur,
+        handleCalculate,
         handleSubmit,
     }
 }

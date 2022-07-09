@@ -1,37 +1,16 @@
-import { useState } from 'react'
-import convert from 'convert'
+import { useUnitQuery } from '../../hooks/useUnitQuery'
+import { formatConvertNumber } from '../../utilities/formatConvertNumber'
+import { measurements } from '../../constants/unitConvert'
 
-import { measurements } from './measurements'
-
-import Grid from '@mui/material/Grid'
-import InputGroup from './InputGroup'
-import Stack from '@mui/material/Stack'
-import TextField from '@mui/material/TextField'
-import MenuItem from '@mui/material/MenuItem'
+import { Grid, Stack, TextField, MenuItem } from '@mui/material'
 
 import PageTitle from '../../layout/PageTitle'
+import InputGroup from './InputGroup'
 
 import './_index.css'
 
 const UnitConverter = () => {
-    const defaultNumber = 0
-
-    const decimals = 3
-
-    const initialValues = {
-        measurement: measurements[defaultNumber].type,
-        leftInput: '',
-        rightInput: '',
-        leftSelection: measurements[defaultNumber].units[0].unit,
-        rightSelection: measurements[defaultNumber].units[1].unit,
-    }
-
-    const [values, setValues] = useState(initialValues)
-    const [currentUnits, setCurrentUnits] = useState(measurements[defaultNumber].units)
-
-    const formattedNumber = (value, fromNum, toNum) => {
-        return Number(Math.round(parseFloat(convert(parseInt(value), fromNum).to(toNum) + 'e' + decimals)) + 'e-' + decimals)
-    }
+    const { values, setValues, currentUnits, setCurrentUnits } = useUnitQuery()
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -59,14 +38,14 @@ const UnitConverter = () => {
             setValues({
                 ...values,
                 leftInput: value,
-                rightInput: value ? formattedNumber(value, leftSelection, rightSelection) : '',
+                rightInput: value ? formatConvertNumber(value, leftSelection, rightSelection) : '',
             })
         }
 
         if (name === 'rightInput') {
             setValues({
                 ...values,
-                leftInput: value ? formattedNumber(value, rightSelection, leftSelection) : '',
+                leftInput: value ? formatConvertNumber(value, rightSelection, leftSelection) : '',
                 rightInput: value,
             })
         }
@@ -74,7 +53,7 @@ const UnitConverter = () => {
         if (name === 'leftSelection') {
             setValues({
                 ...values,
-                rightInput: leftInput ? formattedNumber(value, leftInput, rightSelection) : rightInput,
+                rightInput: leftInput ? formatConvertNumber(value, leftInput, rightSelection) : rightInput,
                 leftSelection: value,
             })
         }
@@ -82,7 +61,7 @@ const UnitConverter = () => {
         if (name === 'rightSelection') {
             setValues({
                 ...values,
-                leftInput: rightInput ? formattedNumber(value, rightInput, leftSelection) : leftInput,
+                leftInput: rightInput ? formatConvertNumber(value, rightInput, leftSelection) : leftInput,
                 rightSelection: value,
             })
         }
@@ -90,6 +69,14 @@ const UnitConverter = () => {
 
     const handleFocus = (e) => {
         e.target.select()
+    }
+
+    const handleClear = () => {
+        setValues({
+            ...values,
+            leftInput: '',
+            rightInput: '',
+        })
     }
 
     return (
@@ -115,6 +102,7 @@ const UnitConverter = () => {
                             selectName='leftSelection'
                             selectValue={values.leftSelection}
                             focusHandler={handleFocus}
+                            clearHandler={handleClear}
                             changeHandler={handleChange}
                             unitList={currentUnits}
                         />
@@ -126,6 +114,7 @@ const UnitConverter = () => {
                             selectName='rightSelection'
                             selectValue={values.rightSelection}
                             focusHandler={handleFocus}
+                            clearHandler={handleClear}
                             changeHandler={handleChange}
                             unitList={currentUnits}
                         />
@@ -140,7 +129,7 @@ const UnitConverter = () => {
                                     <span className='stack-pipe'>|</span>
                                     {values.leftInput && values.rightInput && (
                                         <>
-                                            <span>{formattedNumber(values.leftInput, values.leftSelection, option.unit)}</span>
+                                            <span>{formatConvertNumber(values.leftInput, values.leftSelection, option.unit)}</span>
                                         </>
                                     )}
 

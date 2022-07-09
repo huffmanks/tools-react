@@ -3,7 +3,10 @@ export const initialValues = {
     originalHeight: '',
     selectedType: 'width',
     newSize: '',
+    newWidth: '',
+    newHeight: '',
     aspectRatio: '',
+    aspectMultiplier: '',
 }
 
 export const aspectInputs = [
@@ -23,5 +26,24 @@ export const aspectInputs = [
         label: 'Width',
         placeholder: '500',
         isDynamic: true,
+    },
+]
+
+export const aspectOutput = [
+    {
+        name: 'newWidth',
+        label: 'Width',
+    },
+    {
+        name: 'newHeight',
+        label: 'Height',
+    },
+    {
+        name: 'aspectRatio',
+        label: 'Aspect Ratio',
+    },
+    {
+        name: 'aspectMultiplier',
+        label: 'Aspect Multiplier',
     },
 ]
