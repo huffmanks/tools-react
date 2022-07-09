@@ -119,6 +119,7 @@ GET /?m=2&left=4&right=5
 
 <br />
 <br />
+
 | Parameter | Type                               | Description       | Example   |
 | :-------- | :--------------------------------- | :---------------- | :-------- |
 | `m`       | `string` &nbsp; OR &nbsp; `number` | Measurement types | length, 2 |
@@ -127,6 +128,7 @@ GET /?m=2&left=4&right=5
 
 <br />
 <br />
+
 The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
