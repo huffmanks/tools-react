@@ -110,20 +110,25 @@ To get a local copy up and running follow these simple example steps.
 BASE URL: https://tools.huffmanks.com/unit-converter
 
 ```http
-/?m=length&left=in&right=km
+GET /?m=length&left=in&right=km
 ```
 
 ```http
-/?m=2&left=4&right=5
+GET /?m=2&left=4&right=5
 ```
 
-| Parameter | Type                 | Description       | Example   |
-| :-------- | :------------------- | :---------------- | :-------- |
-| `m`       | `string` OR `number` | Measurement types | length, 2 |
-| `left`    | `string` OR `number` | Left unit select  | in, 4     |
-| `right`   | `string` OR `number` | Right unit select | km, 5     |
+/
+/
 
-The string can any variant of the word. i.e. kilometers, kilo, km, etc.
+| Parameter | Type                               | Description       | Example   |
+| :-------- | :--------------------------------- | :---------------- | :-------- |
+| `m`       | `string` &nbsp; OR &nbsp; `number` | Measurement types | length, 2 |
+| `left`    | `string` &nbsp; OR &nbsp; `number` | Left unit select  | in, 4     |
+| `right`   | `string` &nbsp; OR &nbsp; `number` | Right unit select | km, 5     |
+
+/
+/
+The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
