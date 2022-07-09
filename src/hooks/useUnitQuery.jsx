@@ -10,9 +10,9 @@ export const useUnitQuery = () => {
 
     const [currentUnits, setCurrentUnits] = useState([])
 
-    const m = searchParams.get('m').toLowerCase()
-    const left = searchParams.get('left').toLowerCase()
-    const right = searchParams.get('right').toLowerCase()
+    const m = searchParams.get('m')?.toLowerCase()
+    const left = searchParams.get('left')?.toLowerCase()
+    const right = searchParams.get('right')?.toLowerCase()
 
     useEffect(() => {
         const type = () => {
