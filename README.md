@@ -129,84 +129,104 @@ GET /?m=2&left=4&right=5
 
 The string can be any variant of the word. i.e. kilometers, kilo, km, etc.
 
-| Digital Storage |
+<br />
+
+### Digital Storage
+
+<br />
+
 | :-------------- | ---------------------------------- |
-| Unit            | Short                              |
-| :--------       | :--------------------------------- |
-| terabytes       | TB                                 |
-| gigabytes       | GB                                 |
-| megabytes       | MB                                 |
-| kilobytes       | KB                                 |
-| bytes           | B                                  |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| terabytes | TB |
+| gigabytes | GB |
+| megabytes | MB |
+| kilobytes | KB |
+| bytes | B |
 
 <br />
 
-| Length      |
+### Length
+
+<br />
+
 | :---------- | ---------------------------------- |
-| Unit        | Short                              |
-| :--------   | :--------------------------------- |
-| miles       | mi                                 |
-| yards       | yd                                 |
-| feet        | ft                                 |
-| inches      | in                                 |
-| kilometers  | km                                 |
-| meters      | m                                  |
-| centimeters | cm                                 |
-| millimeters | mm                                 |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| miles | mi |
+| yards | yd |
+| feet | ft |
+| inches | in |
+| kilometers | km |
+| meters | m |
+| centimeters | cm |
+| millimeters | mm |
 
 <br />
 
-| Volume            |
+### Volume
+
+<br />
+
 | :---------------- | ---------------------------------- |
-| Unit              | Short                              |
-| :--------         | :--------------------------------- |
-| US liquid gallons | gal                                |
-| US liquid quarts  | qt                                 |
-| US liquid pints   | p                                  |
-| US legal cups     | c                                  |
-| US fluid ounces   | oz                                 |
-| US tablespoons    | tbsp                               |
-| US teaspoons      | tsp                                |
-| liters            | L                                  |
-| milliliters       | mL                                 |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| US liquid gallons | gal |
+| US liquid quarts | qt |
+| US liquid pints | p |
+| US legal cups | c |
+| US fluid ounces | oz |
+| US tablespoons | tbsp |
+| US teaspoons | tsp |
+| liters | L |
+| milliliters | mL |
 
 <br />
 
-| Temperature |
+### Temperature
+
+<br />
+
 | :---------- | ---------------------------------- |
-| Unit        | Short                              |
-| :--------   | :--------------------------------- |
-| celsius     | C                                  |
-| fahrenheit  | F                                  |
-| kelvin      | K                                  |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| celsius | C |
+| fahrenheit | F |
+| kelvin | K |
 
 <br />
 
-| Time         |
+### Time
+
+<br />
+
 | :----------- | ---------------------------------- |
-| Unit         | Short                              |
-| :--------    | :--------------------------------- |
-| years        | yr                                 |
-| months       | mo                                 |
-| weeks        | wk                                 |
-| days         | d                                  |
-| hours        | hr                                 |
-| minutes      | min                                |
-| seconds      | s                                  |
-| milliseconds | ms                                 |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| years | yr |
+| months | mo |
+| weeks | wk |
+| days | d |
+| hours | hr |
+| minutes | min |
+| seconds | s |
+| milliseconds | ms |
 
 <br />
 
-| Weight     |
+### Weight
+
+<br />
+
 | :--------- | ---------------------------------- |
-| Unit       | Short                              |
-| :--------  | :--------------------------------- |
-| US tons    | ton                                |
-| pounds     | lbs                                |
-| ounces     | oz                                 |
-| kilograms  | kg                                 |
-| grams      | g                                  |
-| milligrams | mg                                 |
+| Unit | Short |
+| :-------- | :--------------------------------- |
+| US tons | ton |
+| pounds | lbs |
+| ounces | oz |
+| kilograms | kg |
+| grams | g |
+| milligrams | mg |
 
 <br />
 
